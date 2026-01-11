@@ -1,46 +1,52 @@
-import Topbar from "./topbar";
+import DashboardCard from "./components/DashboardCard";
+import { mockDecision } from "./lib/mockDecision";
 
-export default function Page() {
+export default function DashboardPage() {
+  const { finalDecision, confidence, message } = mockDecision;
+
+  const decisionColor =
+    finalDecision === "RUN"
+      ? "#22c55e"
+      : finalDecision === "PAUSE"
+      ? "#facc15"
+      : "#ef4444";
+
   return (
-    <>
-      <Topbar />
+    <main style={{ maxWidth: 1200 }}>
+      <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 24 }}>
+        Soullytics Dashboard
+      </h1>
 
-      <main
+      {/* TOP METRICS */}
+      <div style={{ display: "flex", gap: 16, marginBottom: 32 }}>
+        <DashboardCard
+          title="Final Decision"
+          value={finalDecision}
+          color={decisionColor}
+        />
+        <DashboardCard
+          title="Confidence"
+          value={`${confidence}%`}
+          color="#38bdf8"
+        />
+        <DashboardCard title="System Status" value="Operational" color="#22c55e" />
+        <DashboardCard title="Last Update" value="Just now" />
+      </div>
+
+      {/* MESSAGE */}
+      <div
         style={{
-          padding: 24,
-          maxWidth: 900,
+          background: "#0F172A",
+          border: "1px solid #1f2933",
+          borderRadius: 12,
+          padding: 20,
         }}
       >
-        <h1
-          style={{
-            fontSize: 28,
-            fontWeight: 700,
-            marginBottom: 8,
-          }}
-        >
-          Soullytics Dashboard
-        </h1>
-
-        <p style={{ color: "#9CA3AF", marginBottom: 32 }}>
-          Frontend is running successfully.
-        </p>
-
-        <div
-          style={{
-            background: "#111827",
-            padding: 24,
-            borderRadius: 12,
-            border: "1px solid #1f2937",
-          }}
-        >
-          <div style={{ fontSize: 13, color: "#9CA3AF" }}>
-            System Status
-          </div>
-          <div style={{ marginTop: 8, fontSize: 16 }}>
-            All systems operational. Ready to scale.
-          </div>
+        <div style={{ fontSize: 12, color: "#94a3b8", marginBottom: 8 }}>
+          System Message
         </div>
-      </main>
-    </>
+        <div style={{ fontSize: 16 }}>{message}</div>
+      </div>
+    </main>
   );
 }
