@@ -1,51 +1,72 @@
-import DashboardCard from "./components/DashboardCard";
-import { mockDecision } from "./lib/mockDecision";
+// src/app/page.tsx
 
-export default function DashboardPage() {
-  const { finalDecision, confidence, message } = mockDecision;
-
-  const decisionColor =
-    finalDecision === "RUN"
-      ? "#22c55e"
-      : finalDecision === "PAUSE"
-      ? "#facc15"
-      : "#ef4444";
-
+export default function LandingPage() {
   return (
-    <main style={{ maxWidth: 1200 }}>
-      <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 24 }}>
-        Soullytics Dashboard
-      </h1>
-
-      {/* TOP METRICS */}
-      <div style={{ display: "flex", gap: 16, marginBottom: 32 }}>
-        <DashboardCard
-          title="Final Decision"
-          value={finalDecision}
-          color={decisionColor}
-        />
-        <DashboardCard
-          title="Confidence"
-          value={`${confidence}%`}
-          color="#38bdf8"
-        />
-        <DashboardCard title="System Status" value="Operational" color="#22c55e" />
-        <DashboardCard title="Last Update" value="Just now" />
-      </div>
-
-      {/* MESSAGE */}
+    <main
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "40px 20px",
+      }}
+    >
       <div
         style={{
-          background: "#0F172A",
-          border: "1px solid #1f2933",
-          borderRadius: 12,
-          padding: 20,
+          maxWidth: 720,
+          width: "100%",
         }}
       >
-        <div style={{ fontSize: 12, color: "#94a3b8", marginBottom: 8 }}>
-          System Message
-        </div>
-        <div style={{ fontSize: 16 }}>{message}</div>
+        {/* HERO */}
+        <h1
+          style={{
+            fontSize: 42,
+            fontWeight: 800,
+            lineHeight: 1.1,
+            marginBottom: 20,
+          }}
+        >
+          Cold, Unemotional Decisions for Paid Growth.
+        </h1>
+
+        <p
+          style={{
+            fontSize: 18,
+            color: "#9CA3AF",
+            marginBottom: 32,
+            maxWidth: 620,
+          }}
+        >
+          Soullytics tells you when to <b>RUN</b>, <b>SCALE</b>, <b>PAUSE</b> or{" "}
+          <b>KILL</b> ads — using signals, not hope.
+        </p>
+
+        {/* CTA */}
+        <button
+          style={{
+            background: "#ffffff",
+            color: "#000000",
+            padding: "14px 24px",
+            fontSize: 16,
+            fontWeight: 700,
+            borderRadius: 8,
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
+          Request Early Access
+        </button>
+
+        {/* SUB NOTE */}
+        <p
+          style={{
+            marginTop: 12,
+            fontSize: 13,
+            color: "#6B7280",
+          }}
+        >
+          Limited beta. No spam.
+        </p>
       </div>
     </main>
   );
