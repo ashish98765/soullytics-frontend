@@ -1,13 +1,10 @@
-// src/app/lib/mockDecision.ts
-
 export const mockDecision = {
-  finalDecision: "RUN", // RUN | PAUSE | DO_NOT_RUN
-  confidence: 87,
-  stats: {
-    enginesEvaluated: 40,
-    warnings: 3,
-    criticalFails: 0,
-  },
-  message: "System stable. Risk acceptable. Ads cleared to run.",
-  timestamp: new Date().toISOString(),
+  finalDecision: "RUN",
+  confidence: 0.87,
+  engines: [
+    { name: "ObjectiveClarity", score: 0.9 },
+    { name: "BudgetReality", score: 0.82 },
+    { name: "AudienceTemperature", score: 0.78 }
+  ],
+  timestamp: new Date().toISOString()
 };
