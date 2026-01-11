@@ -1,4 +1,5 @@
 import "./globals.css";
+import AppShell from "@/components/layout/AppShell";
 
 export const metadata = {
   title: "Soullytics",
@@ -13,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
