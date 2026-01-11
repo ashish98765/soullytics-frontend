@@ -1,6 +1,6 @@
 // src/app/page.tsx
 
-import AppShell from "../components/AppShell";
+import AppShell from "../components/layout/AppShell";
 
 export default function DashboardPage() {
   const finalDecision = "RUN";
@@ -20,7 +20,6 @@ export default function DashboardPage() {
         Soullytics Dashboard
       </h1>
 
-      {/* Decision */}
       <div style={{ marginBottom: 20 }}>
         <div style={{ color: "#999", fontSize: 14 }}>Final Decision</div>
         <div style={{ fontSize: 32, fontWeight: "bold", color: decisionColor }}>
@@ -28,13 +27,11 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Confidence */}
       <div style={{ marginBottom: 20 }}>
         <div style={{ color: "#999", fontSize: 14 }}>Confidence</div>
         <div style={{ fontSize: 24 }}>{confidence}%</div>
       </div>
 
-      {/* Message */}
       <div style={{ background: "#111", padding: 16, borderRadius: 8 }}>
         <div style={{ color: "#999", fontSize: 14 }}>System Message</div>
         <p style={{ marginTop: 8 }}>{message}</p>
