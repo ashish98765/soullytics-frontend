@@ -1,104 +1,94 @@
-const isMobile =
-  typeof window !== "undefined" && window.innerWidth < 768;
-export default function LandingPage() {
+// src/app/app/page.tsx
+
+import DashboardCard from "./components/DashboardCard";
+
+export default function DashboardPage() {
   return (
-    <main
+    <div
       style={{
-        minHeight: "100vh",
-        background: "#0B0F14",
-        color: "#E5E7EB",
-        padding: "60px 24px",
-        display: "flex",
-        justifyContent: "center",
+        display: "grid",
+        gap: 32,
       }}
     >
+      {/* HEADER */}
+      <div>
+        <h1
+          style={{
+            fontSize: 28,
+            marginBottom: 6,
+          }}
+        >
+          Dashboard
+        </h1>
+
+        <p
+          style={{
+            color: "#9CA3AF",
+            fontSize: 14,
+          }}
+        >
+          High-level view of your paid growth system.
+        </p>
+      </div>
+
+      {/* KPI CARDS */}
       <div
         style={{
-          width: "100%",
-          maxWidth: 1200,
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 64,
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: 20,
+        }}
+      >
+        <DashboardCard
+          title="Spend"
+          value="$12,480"
+          sub="Last 7 days"
+        />
+        <DashboardCard
+          title="CTR"
+          value="2.34%"
+          sub="Stable"
+        />
+        <DashboardCard
+          title="CPA"
+          value="$18.90"
+          sub="Improving"
+        />
+        <DashboardCard
+          title="Conversions"
+          value="658"
+          sub="+12%"
+        />
+      </div>
+
+      {/* CURRENT DECISION */}
+      <div
+        className="card"
+        style={{
+          padding: 24,
+          display: "grid",
+          gridTemplateColumns: "1fr auto",
+          gap: 24,
           alignItems: "center",
         }}
       >
-        {/* LEFT — HERO */}
+        {/* LEFT */}
         <div>
-          <h1
-            style={{
-              fontSize: 48,
-              fontWeight: 800,
-              lineHeight: 1.1,
-              marginBottom: 24,
-            }}
-          >
-            Cold, Unemotional Decisions for Paid Growth.
-          </h1>
-
-          <p
-            style={{
-              fontSize: 18,
-              color: "#9CA3AF",
-              maxWidth: 520,
-              marginBottom: 32,
-              lineHeight: 1.7,
-            }}
-          >
-            Soullytics tells you when to <b>RUN</b>, <b>SCALE</b>,{" "}
-            <b>PAUSE</b> or <b>KILL</b> ads — using signals, not hope.
-          </p>
-
-          <button
-            style={{
-              background: "#FFFFFF",
-              color: "#000000",
-              padding: "14px 28px",
-              fontSize: 16,
-              fontWeight: 700,
-              borderRadius: 10,
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
-            Request Early Access
-          </button>
-
-          <p
-            style={{
-              marginTop: 12,
-              fontSize: 13,
-              color: "#6B7280",
-            }}
-          >
-            Limited beta. No spam.
-          </p>
-        </div>
-
-        {/* RIGHT — DECISION CARD */}
-        <div
-          style={{
-            background: "#0F1623",
-            borderRadius: 16,
-            padding: 28,
-            border: "1px solid #1F2937",
-          }}
-        >
           <div
             style={{
               fontSize: 13,
               color: "#9CA3AF",
-              marginBottom: 8,
+              marginBottom: 6,
             }}
           >
-            Current Decision
+            Current System Decision
           </div>
 
           <div
             style={{
-              fontSize: 36,
+              fontSize: 34,
               fontWeight: 800,
               color: "#22C55E",
-              marginBottom: 12,
             }}
           >
             RUN
@@ -106,601 +96,30 @@ export default function LandingPage() {
 
           <div
             style={{
+              marginTop: 6,
               fontSize: 14,
               color: "#9CA3AF",
-              marginBottom: 20,
             }}
           >
-            Confidence: <b style={{ color: "#E5E7EB" }}>87%</b>
-          </div>
-
-          <div
-            style={{
-              background: "#0B1220",
-              padding: 16,
-              borderRadius: 10,
-              fontSize: 14,
-              lineHeight: 1.6,
-              color: "#D1D5DB",
-            }}
-          >
-            Performance signals indicate stable CPA, improving CTR and
-            conversion momentum. Scaling is statistically justified.
+            Confidence:{" "}
+            <b style={{ color: "#E5E7EB" }}>87%</b>
           </div>
         </div>
-      </div>
 
-      {/* SECTION — WHO IT’S FOR */}
-      <section
-        style={{
-          marginTop: 140,
-          maxWidth: 1200,
-          marginInline: "auto",
-          width: "100%",
-        }}
-      >
+        {/* RIGHT */}
         <div
           style={{
-            fontSize: 13,
-            letterSpacing: 1,
-            color: "#6B7280",
-            marginBottom: 12,
-            textTransform: "uppercase",
+            maxWidth: 420,
+            fontSize: 14,
+            lineHeight: 1.6,
+            color: "#D1D5DB",
           }}
         >
-          Built for teams who spend real money
+          Performance signals indicate stable CPA, improving CTR and
+          consistent conversion momentum. Scaling is statistically
+          justified under current conditions.
         </div>
-
-        <h2
-          style={{
-            fontSize: 32,
-            fontWeight: 800,
-            marginBottom: 40,
-          }}
-        >
-          Who uses Soullytics
-        </h2>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: 24,
-          }}
-        >
-          {[
-            {
-              title: "Founders",
-              desc: "Stop guessing. Know exactly when to scale or kill ads.",
-            },
-            {
-              title: "Performance Marketers",
-              desc: "Defend decisions with data, not gut feelings.",
-            },
-            {
-              title: "Growth Teams",
-              desc: "Align spend with signals across channels.",
-            },
-            {
-              title: "Agencies",
-              desc: "Show clients cold, defensible decisions.",
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              style={{
-                background: "#0F1623",
-                border: "1px solid #1F2937",
-                borderRadius: 14,
-                padding: 20,
-              }}
-            >
-              <div
-                style={{
-                  fontSize: 18,
-                  fontWeight: 700,
-                  marginBottom: 8,
-                }}
-              >
-                {item.title}
-              </div>
-              <div
-                style={{
-                  fontSize: 14,
-                  color: "#9CA3AF",
-                  lineHeight: 1.6,
-                }}
-              >
-                {item.desc}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SECTION — WHAT IT REPLACES */}
-      <section
-        style={{
-          marginTop: 140,
-          maxWidth: 900,
-          marginInline: "auto",
-          width: "100%",
-          textAlign: "center",
-        }}
-      >
-        <h2
-          style={{
-            fontSize: 32,
-            fontWeight: 800,
-            marginBottom: 24,
-          }}
-        >
-          Replace guesswork with signals
-        </h2>
-
-        <p
-          style={{
-            fontSize: 18,
-            color: "#9CA3AF",
-            maxWidth: 640,
-            marginInline: "auto",
-            lineHeight: 1.7,
-          }}
-        >
-          Soullytics replaces emotional calls, Slack debates and spreadsheet
-          chaos with one cold decision engine.
-        </p>
-
-        <div
-          style={{
-            marginTop: 40,
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 20,
-            textAlign: "left",
-          }}
-        >
-          {[
-            "“Let’s wait one more day”",
-            "“I feel this campaign might work”",
-            "“CTR looks okay but…”",
-            "Endless dashboards with no answer",
-          ].map((text) => (
-            <div
-              key={text}
-              style={{
-                background: "#0B1220",
-                borderRadius: 12,
-                padding: 16,
-                fontSize: 14,
-                color: "#D1D5DB",
-              }}
-            >
-              ❌ {text}
-            </div>
-          ))}
-        </div>
-      </section>
-      {/* SECTION — HOW IT WORKS */}
-<section
-  style={{
-    marginTop: 140,
-    maxWidth: 1100,
-    marginInline: "auto",
-    width: "100%",
-  }}
->
-  <div
-    style={{
-      fontSize: 13,
-      letterSpacing: 1,
-      color: "#6B7280",
-      marginBottom: 12,
-      textTransform: "uppercase",
-    }}
-  >
-    How it works
-  </div>
-
-  <h2
-    style={{
-      fontSize: 36,
-      fontWeight: 800,
-      marginBottom: 48,
-    }}
-  >
-    Three steps. Zero emotion.
-  </h2>
-
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-      gap: 28,
-    }}
-  >
-    {/* STEP 1 */}
-    <div
-      style={{
-        background: "#0F1623",
-        border: "1px solid #1F2937",
-        borderRadius: 16,
-        padding: 24,
-      }}
-    >
-      <div
-        style={{
-          fontSize: 12,
-          color: "#6B7280",
-          marginBottom: 8,
-        }}
-      >
-        STEP 01
       </div>
-
-      <div
-        style={{
-          fontSize: 20,
-          fontWeight: 700,
-          marginBottom: 12,
-        }}
-      >
-        Ingest Signals
-      </div>
-
-      <p
-        style={{
-          fontSize: 14,
-          color: "#9CA3AF",
-          lineHeight: 1.6,
-        }}
-      >
-        Soullytics continuously reads CPA, CTR, CVR, spend velocity, volatility
-        and trend direction — not vanity metrics.
-      </p>
     </div>
-
-    {/* STEP 2 */}
-    <div
-      style={{
-        background: "#0F1623",
-        border: "1px solid #1F2937",
-        borderRadius: 16,
-        padding: 24,
-      }}
-    >
-      <div
-        style={{
-          fontSize: 12,
-          color: "#6B7280",
-          marginBottom: 8,
-        }}
-      >
-        STEP 02
-      </div>
-
-      <div
-        style={{
-          fontSize: 20,
-          fontWeight: 700,
-          marginBottom: 12,
-        }}
-      >
-        Evaluate Reality
-      </div>
-
-      <p
-        style={{
-          fontSize: 14,
-          color: "#9CA3AF",
-          lineHeight: 1.6,
-        }}
-      >
-        The engine checks statistical stability, momentum and risk. No stories.
-        No hope. Just probabilities.
-      </p>
-    </div>
-
-    {/* STEP 3 */}
-    <div
-      style={{
-        background: "#0F1623",
-        border: "1px solid #1F2937",
-        borderRadius: 16,
-        padding: 24,
-      }}
-    >
-      <div
-        style={{
-          fontSize: 12,
-          color: "#6B7280",
-          marginBottom: 8,
-        }}
-      >
-        STEP 03
-      </div>
-
-      <div
-        style={{
-          fontSize: 20,
-          fontWeight: 700,
-          marginBottom: 12,
-        }}
-      >
-        Output Decision
-      </div>
-
-      <p
-        style={{
-          fontSize: 14,
-          color: "#9CA3AF",
-          lineHeight: 1.6,
-        }}
-      >
-        One answer: <b>RUN</b>, <b>SCALE</b>, <b>PAUSE</b> or <b>KILL</b> — with a
-        confidence score you can defend.
-      </p>
-    </div>
-  </div>
-</section>
-      {/* SECTION — WHY SOULLYTICS IS DIFFERENT */}
-<section
-  style={{
-    marginTop: 140,
-    maxWidth: 1100,
-    marginInline: "auto",
-    width: "100%",
-  }}
->
-  <div
-    style={{
-      fontSize: 13,
-      letterSpacing: 1,
-      color: "#6B7280",
-      marginBottom: 12,
-      textTransform: "uppercase",
-    }}
-  >
-    Why Soullytics
-  </div>
-
-  <h2
-    style={{
-      fontSize: 36,
-      fontWeight: 800,
-      marginBottom: 56,
-    }}
-  >
-    Built to say no.
-  </h2>
-
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-      gap: 32,
-    }}
-  >
-    {/* LEFT — OLD WORLD */}
-    <div
-      style={{
-        background: "#0B1220",
-        border: "1px solid #1F2937",
-        borderRadius: 16,
-        padding: 28,
-      }}
-    >
-      <div
-        style={{
-          fontSize: 14,
-          fontWeight: 700,
-          marginBottom: 16,
-          color: "#9CA3AF",
-        }}
-      >
-        The old way
-      </div>
-
-      <ul
-        style={{
-          listStyle: "none",
-          padding: 0,
-          margin: 0,
-          display: "grid",
-          gap: 14,
-          fontSize: 15,
-          color: "#9CA3AF",
-        }}
-      >
-        <li>• Dashboards that describe the past</li>
-        <li>• Agencies selling optimism</li>
-        <li>• Gut decisions under pressure</li>
-        <li>• Scaling because “it feels right”</li>
-        <li>• Killing winners too early</li>
-        <li>• Letting losers burn cash</li>
-      </ul>
-    </div>
-
-    {/* RIGHT — SOULLYTICS */}
-    <div
-      style={{
-        background: "linear-gradient(180deg, #0F1623, #0B1220)",
-        border: "1px solid #1F2937",
-        borderRadius: 16,
-        padding: 28,
-      }}
-    >
-      <div
-        style={{
-          fontSize: 14,
-          fontWeight: 700,
-          marginBottom: 16,
-        }}
-      >
-        The Soullytics way
-      </div>
-
-      <ul
-        style={{
-          listStyle: "none",
-          padding: 0,
-          margin: 0,
-          display: "grid",
-          gap: 14,
-          fontSize: 15,
-        }}
-      >
-        <li>• Decisions, not charts</li>
-        <li>• No emotional attachment</li>
-        <li>• Statistical confidence scores</li>
-        <li>• Clear RUN / SCALE / PAUSE / KILL</li>
-        <li>• Protects capital first</li>
-        <li>• Scales only when reality agrees</li>
-      </ul>
-    </div>
-  </div>
-
-  <div
-    style={{
-      marginTop: 48,
-      fontSize: 16,
-      color: "#9CA3AF",
-      maxWidth: 720,
-    }}
-  >
-    Soullytics is not here to make you feel good.
-    <br />
-    It’s here to stop you from lying to yourself.
-  </div>
-</section>
-      {/* SECTION — WHO THIS IS FOR */}
-<section
-  style={{
-    marginTop: 140,
-    maxWidth: 1100,
-    marginInline: "auto",
-    width: "100%",
-  }}
->
-  <div
-    style={{
-      fontSize: 13,
-      letterSpacing: 1,
-      color: "#6B7280",
-      marginBottom: 12,
-      textTransform: "uppercase",
-    }}
-  >
-    Built for
-  </div>
-
-  <h2
-    style={{
-      fontSize: 36,
-      fontWeight: 800,
-      marginBottom: 56,
-    }}
-  >
-    People who respect reality.
-  </h2>
-
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-      gap: 32,
-    }}
-  >
-    {/* CARD 1 */}
-    <div
-      style={{
-        background: "#0B1220",
-        border: "1px solid #1F2937",
-        borderRadius: 16,
-        padding: 28,
-      }}
-    >
-      <h3 style={{ fontSize: 20, marginBottom: 12 }}>
-        Founders & Operators
-      </h3>
-      <p style={{ color: "#9CA3AF", lineHeight: 1.6 }}>
-        You don’t want motivation.
-        <br />
-        You want to know if this thing should live or die.
-      </p>
-    </div>
-
-    {/* CARD 2 */}
-    <div
-      style={{
-        background: "#0B1220",
-        border: "1px solid #1F2937",
-        borderRadius: 16,
-        padding: 28,
-      }}
-    >
-      <h3 style={{ fontSize: 20, marginBottom: 12 }}>
-        Performance Marketers
-      </h3>
-      <p style={{ color: "#9CA3AF", lineHeight: 1.6 }}>
-        When the dashboard looks “okay”
-        <br />
-        but your gut says something is off.
-      </p>
-    </div>
-
-    {/* CARD 3 */}
-    <div
-      style={{
-        background: "#0B1220",
-        border: "1px solid #1F2937",
-        borderRadius: 16,
-        padding: 28,
-      }}
-    >
-      <h3 style={{ fontSize: 20, marginBottom: 12 }}>
-        Game & App Studios
-      </h3>
-      <p style={{ color: "#9CA3AF", lineHeight: 1.6 }}>
-        Kill bad bets early.
-        <br />
-        Double down only when the math agrees.
-      </p>
-    </div>
-
-    {/* CARD 4 */}
-    <div
-      style={{
-        background: "#0B1220",
-        border: "1px solid #1F2937",
-        borderRadius: 16,
-        padding: 28,
-      }}
-    >
-      <h3 style={{ fontSize: 20, marginBottom: 12 }}>
-        Agencies (Internal Use)
-      </h3>
-      <p style={{ color: "#9CA3AF", lineHeight: 1.6 }}>
-        Make recommendations you can defend.
-        <br />
-        Not stories you hope are true.
-      </p>
-    </div>
-  </div>
-
-  <div
-    style={{
-      marginTop: 56,
-      fontSize: 16,
-      color: "#9CA3AF",
-      maxWidth: 720,
-    }}
-  >
-    If you want comfort, dashboards already exist.
-    <br />
-    If you want truth, you’re in the right place.
-  </div>
-</section>
-    </main>
   );
 }
