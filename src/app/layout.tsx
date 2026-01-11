@@ -2,11 +2,10 @@
 
 import "./global.css";
 import { ReactNode } from "react";
-import AppShell from "@/components/layout/AppShell";
 
 export const metadata = {
-  title: "Soullytics — Decision Intelligence OS",
-  description: "Cold, ruthless decision engine for ads, growth & capital",
+  title: "Soullytics – Decision Intelligence OS",
+  description: "Cold, ruthless decision engine for ads & growth",
 };
 
 export default function RootLayout({
@@ -16,10 +15,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <AppShell>
-          {children}
-        </AppShell>
+      <body style={{ margin: 0, background: "#000", color: "#fff" }}>
+        {children}
       </body>
     </html>
   );
