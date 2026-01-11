@@ -1,21 +1,22 @@
 // src/app/layout.tsx
-import "./global.css";
-import { ReactNode } from "react";
+
+import "./globals.css";
 
 export const metadata = {
-  title: "Soullytics — Decision Intelligence for Paid Growth",
-  description:
-    "Cold, unemotional decisions for ads. Know when to run, scale, pause or kill.",
+  title: "Soullytics",
+  description: "Cold, unemotional decisions for paid growth",
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+      </body>
     </html>
   );
 }
