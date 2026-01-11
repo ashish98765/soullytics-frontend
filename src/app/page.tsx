@@ -1,5 +1,6 @@
 // src/app/page.tsx
 
+import AppShell from "@/components/layout/AppShell";
 import { mockDecision } from "./lib/mockDecision";
 
 export default function DashboardPage() {
@@ -13,30 +14,32 @@ export default function DashboardPage() {
       : "text-red-500";
 
   return (
-    <main className="p-6 text-white">
-      <h1 className="text-2xl font-bold mb-4">Soullytics Dashboard</h1>
+    <AppShell>
+      <main className="p-6 text-white space-y-6">
+        <h1 className="text-2xl font-bold">Soullytics Dashboard</h1>
 
-      {/* Decision Status */}
-      <div className="mb-4">
-        <span className="text-sm text-gray-400">Final Decision</span>
-        <div className={`text-3xl font-bold ${decisionColor}`}>
-          {finalDecision}
+        {/* Decision Status */}
+        <div>
+          <span className="text-sm text-gray-400">Final Decision</span>
+          <div className={`text-3xl font-bold ${decisionColor}`}>
+            {finalDecision}
+          </div>
         </div>
-      </div>
 
-      {/* Confidence */}
-      <div className="mb-4">
-        <span className="text-sm text-gray-400">Confidence</span>
-        <div className="text-2xl font-semibold">
-          {confidence}%
+        {/* Confidence */}
+        <div>
+          <span className="text-sm text-gray-400">Confidence</span>
+          <div className="text-2xl font-semibold">
+            {(confidence * 100).toFixed(1)}%
+          </div>
         </div>
-      </div>
 
-      {/* Message */}
-      <div className="bg-gray-800 p-4 rounded">
-        <span className="text-sm text-gray-400">System Message</span>
-        <p className="mt-1">{message}</p>
-      </div>
-    </main>
+        {/* System Message */}
+        <div className="bg-gray-800 p-4 rounded">
+          <span className="text-sm text-gray-400">System Message</span>
+          <p className="mt-1 text-gray-200">{message}</p>
+        </div>
+      </main>
+    </AppShell>
   );
 }
