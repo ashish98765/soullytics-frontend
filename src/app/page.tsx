@@ -1,63 +1,193 @@
-export default function LandingPage() {
+export default function Page() {
   return (
     <main
       style={{
         minHeight: "100vh",
-        background: "radial-gradient(1200px 600px at top, #0F1623, #0B0F14)",
+        background:
+          "radial-gradient(circle at top, #111827 0%, #020617 60%)",
         color: "#E5E7EB",
-        padding: "120px 20px",
         fontFamily: "Inter, system-ui, sans-serif",
       }}
     >
-      <div
+      {/* ================= HERO SECTION ================= */}
+      <section
         style={{
           maxWidth: 1100,
-          margin: "0 auto",
+          marginInline: "auto",
+          padding: "120px 16px 80px",
         }}
       >
-        {/* HERO HEADLINE */}
         <h1
           style={{
-            fontSize: 44,
-            fontWeight: 800,
+            fontSize: 40,
+            fontWeight: 900,
             lineHeight: 1.1,
-            letterSpacing: "-0.02em",
-            marginBottom: 20,
+            marginBottom: 16,
           }}
         >
           Replace guesswork with signals.
         </h1>
 
-        {/* SUBHEAD */}
         <p
           style={{
-            fontSize: 18,
             color: "#9CA3AF",
-            maxWidth: 720,
-            lineHeight: 1.6,
-            marginBottom: 36,
+            fontSize: 16,
+            maxWidth: 520,
+            marginBottom: 28,
           }}
         >
-          Soullytics replaces emotional calls, Slack debates and spreadsheet chaos
-          with one cold decision engine.
+          Soullytics replaces emotional calls, Slack debates and spreadsheet
+          chaos with one cold decision engine.
         </p>
 
-        {/* CTA */}
         <button
           style={{
             background: "#2563EB",
-            color: "#FFFFFF",
+            color: "#fff",
             border: "none",
+            padding: "12px 18px",
             borderRadius: 10,
-            padding: "14px 22px",
-            fontSize: 15,
             fontWeight: 600,
             cursor: "pointer",
           }}
         >
           Get started
         </button>
-      </div>
+      </section>
+
+      {/* ================= THREE STEPS ================= */}
+      <section
+        style={{
+          maxWidth: 1100,
+          marginInline: "auto",
+          padding: "0 16px 80px",
+        }}
+      >
+        <h2
+          style={{
+            fontSize: 28,
+            fontWeight: 800,
+            marginBottom: 8,
+          }}
+        >
+          Three steps. Zero emotion.
+        </h2>
+
+        <p
+          style={{
+            color: "#9CA3AF",
+            marginBottom: 32,
+            fontSize: 15,
+          }}
+        >
+          No stories. No opinions. Just signals → decisions.
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: 20,
+          }}
+        >
+          {/* CARD 1 */}
+          <div
+            style={{
+              background: "#0F1623",
+              border: "1px solid #1F2937",
+              borderRadius: 16,
+              padding: 24,
+            }}
+          >
+            <h3 style={{ fontSize: 18, marginBottom: 8 }}>
+              Ingest signals
+            </h3>
+            <p style={{ color: "#9CA3AF", fontSize: 14 }}>
+              CPA, CTR, CVR, spend velocity, volatility — not vanity metrics.
+            </p>
+          </div>
+
+          {/* CARD 2 */}
+          <div
+            style={{
+              background: "#0F1623",
+              border: "1px solid #1F2937",
+              borderRadius: 16,
+              padding: 24,
+            }}
+          >
+            <h3 style={{ fontSize: 18, marginBottom: 8 }}>
+              Evaluate reality
+            </h3>
+            <p style={{ color: "#9CA3AF", fontSize: 14 }}>
+              Statistical stability, momentum and risk. No stories. Just probabilities.
+            </p>
+          </div>
+
+          {/* CARD 3 */}
+          <div
+            style={{
+              background: "#0F1623",
+              border: "1px solid #1F2937",
+              borderRadius: 16,
+              padding: 24,
+            }}
+          >
+            <h3 style={{ fontSize: 18, marginBottom: 8 }}>
+              Output decision
+            </h3>
+            <p style={{ color: "#9CA3AF", fontSize: 14 }}>
+              RUN, SCALE, PAUSE or KILL — with a confidence score you can defend.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= BUILT TO SAY NO ================= */}
+      <section
+        style={{
+          maxWidth: 1100,
+          marginInline: "auto",
+          padding: "0 16px 120px",
+        }}
+      >
+        <h2
+          style={{
+            fontSize: 26,
+            fontWeight: 800,
+            marginBottom: 12,
+          }}
+        >
+          Built to say no.
+        </h2>
+
+        <p
+          style={{
+            color: "#9CA3AF",
+            maxWidth: 520,
+            fontSize: 15,
+            marginBottom: 24,
+          }}
+        >
+          Soullytics is not here to make you feel good.
+          <br />
+          It’s here to stop you from lying to yourself.
+        </p>
+
+        <button
+          style={{
+            background: "#0F1623",
+            color: "#E5E7EB",
+            border: "1px solid #1F2937",
+            padding: "10px 16px",
+            borderRadius: 10,
+            fontWeight: 600,
+            cursor: "pointer",
+          }}
+        >
+          People who respect reality → Login
+        </button>
+      </section>
     </main>
   );
 }
