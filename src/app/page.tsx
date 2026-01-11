@@ -279,6 +279,168 @@ export default function LandingPage() {
           ))}
         </div>
       </section>
+      {/* SECTION — HOW IT WORKS */}
+<section
+  style={{
+    marginTop: 140,
+    maxWidth: 1100,
+    marginInline: "auto",
+    width: "100%",
+  }}
+>
+  <div
+    style={{
+      fontSize: 13,
+      letterSpacing: 1,
+      color: "#6B7280",
+      marginBottom: 12,
+      textTransform: "uppercase",
+    }}
+  >
+    How it works
+  </div>
+
+  <h2
+    style={{
+      fontSize: 36,
+      fontWeight: 800,
+      marginBottom: 48,
+    }}
+  >
+    Three steps. Zero emotion.
+  </h2>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+      gap: 28,
+    }}
+  >
+    {/* STEP 1 */}
+    <div
+      style={{
+        background: "#0F1623",
+        border: "1px solid #1F2937",
+        borderRadius: 16,
+        padding: 24,
+      }}
+    >
+      <div
+        style={{
+          fontSize: 12,
+          color: "#6B7280",
+          marginBottom: 8,
+        }}
+      >
+        STEP 01
+      </div>
+
+      <div
+        style={{
+          fontSize: 20,
+          fontWeight: 700,
+          marginBottom: 12,
+        }}
+      >
+        Ingest Signals
+      </div>
+
+      <p
+        style={{
+          fontSize: 14,
+          color: "#9CA3AF",
+          lineHeight: 1.6,
+        }}
+      >
+        Soullytics continuously reads CPA, CTR, CVR, spend velocity, volatility
+        and trend direction — not vanity metrics.
+      </p>
+    </div>
+
+    {/* STEP 2 */}
+    <div
+      style={{
+        background: "#0F1623",
+        border: "1px solid #1F2937",
+        borderRadius: 16,
+        padding: 24,
+      }}
+    >
+      <div
+        style={{
+          fontSize: 12,
+          color: "#6B7280",
+          marginBottom: 8,
+        }}
+      >
+        STEP 02
+      </div>
+
+      <div
+        style={{
+          fontSize: 20,
+          fontWeight: 700,
+          marginBottom: 12,
+        }}
+      >
+        Evaluate Reality
+      </div>
+
+      <p
+        style={{
+          fontSize: 14,
+          color: "#9CA3AF",
+          lineHeight: 1.6,
+        }}
+      >
+        The engine checks statistical stability, momentum and risk. No stories.
+        No hope. Just probabilities.
+      </p>
+    </div>
+
+    {/* STEP 3 */}
+    <div
+      style={{
+        background: "#0F1623",
+        border: "1px solid #1F2937",
+        borderRadius: 16,
+        padding: 24,
+      }}
+    >
+      <div
+        style={{
+          fontSize: 12,
+          color: "#6B7280",
+          marginBottom: 8,
+        }}
+      >
+        STEP 03
+      </div>
+
+      <div
+        style={{
+          fontSize: 20,
+          fontWeight: 700,
+          marginBottom: 12,
+        }}
+      >
+        Output Decision
+      </div>
+
+      <p
+        style={{
+          fontSize: 14,
+          color: "#9CA3AF",
+          lineHeight: 1.6,
+        }}
+      >
+        One answer: <b>RUN</b>, <b>SCALE</b>, <b>PAUSE</b> or <b>KILL</b> — with a
+        confidence score you can defend.
+      </p>
+    </div>
+  </div>
+</section>
     </main>
   );
 }
