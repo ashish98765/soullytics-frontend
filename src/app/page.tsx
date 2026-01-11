@@ -1,45 +1,44 @@
 // src/app/page.tsx
 
-import AppShell from "@/components/layout/AppShell";
-import { mockDecision } from "./lib/mockDecision";
+import AppShell from "../components/AppShell";
 
 export default function DashboardPage() {
-  const { finalDecision, confidence, message } = mockDecision;
+  const finalDecision = "RUN";
+  const confidence = 87;
+  const message = "All systems operational. Ready to scale.";
 
   const decisionColor =
     finalDecision === "RUN"
-      ? "text-green-500"
+      ? "green"
       : finalDecision === "PAUSE"
-      ? "text-yellow-500"
-      : "text-red-500";
+      ? "orange"
+      : "red";
 
   return (
     <AppShell>
-      <main className="p-6 text-white space-y-6">
-        <h1 className="text-2xl font-bold">Soullytics Dashboard</h1>
+      <h1 style={{ fontSize: 28, fontWeight: "bold", marginBottom: 20 }}>
+        Soullytics Dashboard
+      </h1>
 
-        {/* Decision Status */}
-        <div>
-          <span className="text-sm text-gray-400">Final Decision</span>
-          <div className={`text-3xl font-bold ${decisionColor}`}>
-            {finalDecision}
-          </div>
+      {/* Decision */}
+      <div style={{ marginBottom: 20 }}>
+        <div style={{ color: "#999", fontSize: 14 }}>Final Decision</div>
+        <div style={{ fontSize: 32, fontWeight: "bold", color: decisionColor }}>
+          {finalDecision}
         </div>
+      </div>
 
-        {/* Confidence */}
-        <div>
-          <span className="text-sm text-gray-400">Confidence</span>
-          <div className="text-2xl font-semibold">
-            {(confidence * 100).toFixed(1)}%
-          </div>
-        </div>
+      {/* Confidence */}
+      <div style={{ marginBottom: 20 }}>
+        <div style={{ color: "#999", fontSize: 14 }}>Confidence</div>
+        <div style={{ fontSize: 24 }}>{confidence}%</div>
+      </div>
 
-        {/* System Message */}
-        <div className="bg-gray-800 p-4 rounded">
-          <span className="text-sm text-gray-400">System Message</span>
-          <p className="mt-1 text-gray-200">{message}</p>
-        </div>
-      </main>
+      {/* Message */}
+      <div style={{ background: "#111", padding: 16, borderRadius: 8 }}>
+        <div style={{ color: "#999", fontSize: 14 }}>System Message</div>
+        <p style={{ marginTop: 8 }}>{message}</p>
+      </div>
     </AppShell>
   );
 }
