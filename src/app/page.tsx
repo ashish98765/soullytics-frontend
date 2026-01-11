@@ -441,6 +441,136 @@ export default function LandingPage() {
     </div>
   </div>
 </section>
+      {/* SECTION — WHY SOULLYTICS IS DIFFERENT */}
+<section
+  style={{
+    marginTop: 140,
+    maxWidth: 1100,
+    marginInline: "auto",
+    width: "100%",
+  }}
+>
+  <div
+    style={{
+      fontSize: 13,
+      letterSpacing: 1,
+      color: "#6B7280",
+      marginBottom: 12,
+      textTransform: "uppercase",
+    }}
+  >
+    Why Soullytics
+  </div>
+
+  <h2
+    style={{
+      fontSize: 36,
+      fontWeight: 800,
+      marginBottom: 56,
+    }}
+  >
+    Built to say no.
+  </h2>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      gap: 32,
+    }}
+  >
+    {/* LEFT — OLD WORLD */}
+    <div
+      style={{
+        background: "#0B1220",
+        border: "1px solid #1F2937",
+        borderRadius: 16,
+        padding: 28,
+      }}
+    >
+      <div
+        style={{
+          fontSize: 14,
+          fontWeight: 700,
+          marginBottom: 16,
+          color: "#9CA3AF",
+        }}
+      >
+        The old way
+      </div>
+
+      <ul
+        style={{
+          listStyle: "none",
+          padding: 0,
+          margin: 0,
+          display: "grid",
+          gap: 14,
+          fontSize: 15,
+          color: "#9CA3AF",
+        }}
+      >
+        <li>• Dashboards that describe the past</li>
+        <li>• Agencies selling optimism</li>
+        <li>• Gut decisions under pressure</li>
+        <li>• Scaling because “it feels right”</li>
+        <li>• Killing winners too early</li>
+        <li>• Letting losers burn cash</li>
+      </ul>
+    </div>
+
+    {/* RIGHT — SOULLYTICS */}
+    <div
+      style={{
+        background: "linear-gradient(180deg, #0F1623, #0B1220)",
+        border: "1px solid #1F2937",
+        borderRadius: 16,
+        padding: 28,
+      }}
+    >
+      <div
+        style={{
+          fontSize: 14,
+          fontWeight: 700,
+          marginBottom: 16,
+        }}
+      >
+        The Soullytics way
+      </div>
+
+      <ul
+        style={{
+          listStyle: "none",
+          padding: 0,
+          margin: 0,
+          display: "grid",
+          gap: 14,
+          fontSize: 15,
+        }}
+      >
+        <li>• Decisions, not charts</li>
+        <li>• No emotional attachment</li>
+        <li>• Statistical confidence scores</li>
+        <li>• Clear RUN / SCALE / PAUSE / KILL</li>
+        <li>• Protects capital first</li>
+        <li>• Scales only when reality agrees</li>
+      </ul>
+    </div>
+  </div>
+
+  <div
+    style={{
+      marginTop: 48,
+      fontSize: 16,
+      color: "#9CA3AF",
+      maxWidth: 720,
+    }}
+  >
+    Soullytics is not here to make you feel good.
+    <br />
+    It’s here to stop you from lying to yourself.
+  </div>
+</section>
     </main>
   );
 }
