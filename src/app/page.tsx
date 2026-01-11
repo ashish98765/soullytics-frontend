@@ -1,46 +1,46 @@
-// src/app/page.tsx
-import { mockDecision } from "./lib/mockDecision";
+import Topbar from "./topbar";
 
-export default function DashboardPage() {
-  const { finalDecision, confidence, message } = mockDecision;
-
-  const decisionColor =
-    finalDecision === "RUN"
-      ? "#22c55e"
-      : finalDecision === "PAUSE"
-      ? "#f59e0b"
-      : "#ef4444";
-
+export default function Page() {
   return (
-    <main style={{ maxWidth: 720 }}>
-      <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 24 }}>
-        Soullytics Dashboard
-      </h1>
+    <>
+      <Topbar />
 
-      <div style={{ marginBottom: 20 }}>
-        <div style={{ fontSize: 13, color: "#9ca3af" }}>Final Decision</div>
-        <div style={{ fontSize: 36, fontWeight: 800, color: decisionColor }}>
-          {finalDecision}
-        </div>
-      </div>
-
-      <div style={{ marginBottom: 20 }}>
-        <div style={{ fontSize: 13, color: "#9ca3af" }}>Confidence</div>
-        <div style={{ fontSize: 24 }}>{confidence}%</div>
-      </div>
-
-      <div
+      <main
         style={{
-          background: "#111827",
-          padding: 16,
-          borderRadius: 8,
+          padding: 24,
+          maxWidth: 900,
         }}
       >
-        <div style={{ fontSize: 13, color: "#9ca3af" }}>
-          System Message
+        <h1
+          style={{
+            fontSize: 28,
+            fontWeight: 700,
+            marginBottom: 8,
+          }}
+        >
+          Soullytics Dashboard
+        </h1>
+
+        <p style={{ color: "#9CA3AF", marginBottom: 32 }}>
+          Frontend is running successfully.
+        </p>
+
+        <div
+          style={{
+            background: "#111827",
+            padding: 24,
+            borderRadius: 12,
+            border: "1px solid #1f2937",
+          }}
+        >
+          <div style={{ fontSize: 13, color: "#9CA3AF" }}>
+            System Status
+          </div>
+          <div style={{ marginTop: 8, fontSize: 16 }}>
+            All systems operational. Ready to scale.
+          </div>
         </div>
-        <p style={{ marginTop: 8 }}>{message}</p>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
