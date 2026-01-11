@@ -1,93 +1,134 @@
 export default function Page() {
   return (
-    <main>
+    <main
+      style={{
+        minHeight: "100vh",
+        background:
+          "radial-gradient(circle at top, #111827 0%, #020617 60%)",
+        color: "#E5E7EB",
+        fontFamily: "Inter, system-ui, sans-serif",
+      }}
+    >
       {/* HERO */}
-      <section className="section hero">
-        <h1>Replace guesswork with signals.</h1>
-        <p>
-          Soullytics replaces emotional calls, Slack debates and spreadsheet
-          chaos with one cold decision engine.
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "120px 16px" }}>
+        <h1 style={{ fontSize: 40, fontWeight: 900, lineHeight: 1.1 }}>
+          Replace guesswork with signals.
+        </h1>
+
+        <p style={{ color: "#9CA3AF", maxWidth: 520, marginTop: 16 }}>
+          Soullytics replaces emotional calls, Slack debates and spreadsheet chaos
+          with one cold decision engine.
         </p>
-        <button className="primary">Get started</button>
+
+        <button
+          style={{
+            marginTop: 28,
+            background: "#2563EB",
+            color: "#fff",
+            border: "none",
+            padding: "12px 18px",
+            borderRadius: 10,
+            fontWeight: 600,
+            cursor: "pointer",
+          }}
+        >
+          Get started
+        </button>
       </section>
 
       {/* THREE STEPS */}
-      <section className="section">
-        <h2>Three steps. Zero emotion.</h2>
-        <p className="muted">
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "0 16px 100px" }}>
+        <h2 style={{ fontSize: 28, fontWeight: 800 }}>Three steps. Zero emotion.</h2>
+        <p style={{ color: "#9CA3AF", marginTop: 8 }}>
           No stories. No opinions. Just signals → decisions.
         </p>
 
-        <div className="grid-3">
-          <div className="card">
-            <h3>Ingest signals</h3>
-            <p>
-              CPA, CTR, CVR, spend velocity, volatility — not vanity metrics.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>Evaluate reality</h3>
-            <p>
-              Statistical stability, momentum and risk. No stories. Just
-              probabilities.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>Output decision</h3>
-            <p>
-              RUN, SCALE, PAUSE or KILL — with a confidence score you can defend.
-            </p>
-          </div>
+        <div
+          style={{
+            marginTop: 32,
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: 20,
+          }}
+        >
+          {[
+            ["Ingest signals", "CPA, CTR, CVR, velocity — not vanity metrics."],
+            ["Evaluate reality", "Statistical stability, momentum and risk."],
+            ["Output decision", "RUN, SCALE, PAUSE or KILL — with confidence."],
+          ].map(([title, text]) => (
+            <div
+              key={title}
+              style={{
+                background: "#0F172A",
+                border: "1px solid #1F2937",
+                borderRadius: 16,
+                padding: 24,
+              }}
+            >
+              <h3 style={{ fontSize: 18, fontWeight: 700 }}>{title}</h3>
+              <p style={{ color: "#9CA3AF", fontSize: 14, marginTop: 8 }}>{text}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* BUILT TO SAY NO */}
-      <section className="section">
-        <h2>Built to say no.</h2>
-        <p>
-          Soullytics is not here to make you feel good.
-          <br />
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "0 16px 120px" }}>
+        <h2 style={{ fontSize: 26, fontWeight: 800 }}>Built to say no.</h2>
+        <p style={{ color: "#9CA3AF", maxWidth: 520, marginTop: 12 }}>
+          Soullytics is not here to make you feel good.  
           It’s here to stop you from lying to yourself.
         </p>
 
-        <button className="secondary">
-          People who respect reality — Login
+        <button
+          style={{
+            marginTop: 24,
+            background: "#0F172A",
+            color: "#E5E7EB",
+            border: "1px solid #1F2937",
+            padding: "10px 16px",
+            borderRadius: 10,
+            fontWeight: 600,
+            cursor: "pointer",
+          }}
+        >
+          People who respect reality → Login
         </button>
       </section>
 
       {/* BUILT FOR */}
-      <section className="section">
-        <h2>Built for people who respect reality.</h2>
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "0 16px 120px" }}>
+        <h2 style={{ fontSize: 28, fontWeight: 700 }}>
+          Built for people who respect reality.
+        </h2>
 
-        <div className="grid-3">
-          <div className="card">
-            <h3>Founders & Operators</h3>
-            <p>
-              You don’t want motivation.
-              <br />
-              You want to know if this thing should live or die.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>Performance Marketers</h3>
-            <p>
-              Dashboards look “okay”.
-              <br />
-              But your gut says something is off.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>Game & App Studios</h3>
-            <p>
-              Kill bad bets early.
-              <br />
-              Double down only when the math agrees.
-            </p>
-          </div>
+        <div
+          style={{
+            marginTop: 32,
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: 20,
+          }}
+        >
+          {[
+            ["Founders & Operators", "You want to know if this thing should live or die."],
+            ["Performance Marketers", "Dashboards look okay, but your gut says something’s off."],
+            ["Game & App Studios", "Kill bad bets early. Double down only when math agrees."],
+            ["Agencies (Internal)", "Make recommendations you can defend without stories."],
+          ].map(([title, text]) => (
+            <div
+              key={title}
+              style={{
+                background: "#0F172A",
+                border: "1px solid #1F2937",
+                borderRadius: 16,
+                padding: 24,
+              }}
+            >
+              <h3 style={{ fontWeight: 700 }}>{title}</h3>
+              <p style={{ color: "#9CA3AF", fontSize: 14, marginTop: 8 }}>{text}</p>
+            </div>
+          ))}
         </div>
       </section>
     </main>
