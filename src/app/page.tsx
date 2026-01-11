@@ -9,32 +9,63 @@ export default function DashboardPage() {
 
   const decisionColor =
     finalDecision === "RUN"
-      ? "green"
+      ? "#22c55e" // green
       : finalDecision === "PAUSE"
-      ? "orange"
-      : "red";
+      ? "#f97316" // orange
+      : "#ef4444"; // red
 
   return (
     <AppShell>
-      <h1 style={{ fontSize: 28, fontWeight: "bold", marginBottom: 20 }}>
+      <h1
+        style={{
+          fontSize: 28,
+          fontWeight: "bold",
+          marginBottom: 20,
+        }}
+      >
         Soullytics Dashboard
       </h1>
 
+      {/* Final Decision */}
       <div style={{ marginBottom: 20 }}>
-        <div style={{ color: "#999", fontSize: 14 }}>Final Decision</div>
-        <div style={{ fontSize: 32, fontWeight: "bold", color: decisionColor }}>
+        <div style={{ color: "#999", fontSize: 14 }}>
+          Final Decision
+        </div>
+        <div
+          style={{
+            fontSize: 32,
+            fontWeight: "bold",
+            color: decisionColor,
+          }}
+        >
           {finalDecision}
         </div>
       </div>
 
+      {/* Confidence */}
       <div style={{ marginBottom: 20 }}>
-        <div style={{ color: "#999", fontSize: 14 }}>Confidence</div>
-        <div style={{ fontSize: 24 }}>{confidence}%</div>
+        <div style={{ color: "#999", fontSize: 14 }}>
+          Confidence
+        </div>
+        <div style={{ fontSize: 24 }}>
+          {confidence}%
+        </div>
       </div>
 
-      <div style={{ background: "#111", padding: 16, borderRadius: 8 }}>
-        <div style={{ color: "#999", fontSize: 14 }}>System Message</div>
-        <p style={{ marginTop: 8 }}>{message}</p>
+      {/* System Message */}
+      <div
+        style={{
+          background: "#111",
+          padding: 16,
+          borderRadius: 8,
+        }}
+      >
+        <div style={{ color: "#999", fontSize: 14 }}>
+          System Message
+        </div>
+        <p style={{ marginTop: 8 }}>
+          {message}
+        </p>
       </div>
     </AppShell>
   );
