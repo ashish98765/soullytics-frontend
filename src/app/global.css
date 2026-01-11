@@ -1,12 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
 
-html,
-body {
-  height: 100%;
+* {
+  box-sizing: border-box;
 }
 
-body {
-  @apply bg-zinc-950 text-zinc-100 antialiased;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0B0F14;
+  color: #E5E7EB;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+code, .mono {
+  font-family: 'JetBrains Mono', monospace;
 }
