@@ -57,41 +57,6 @@ export default function Page() {
         </button>
       </section>
 
-      {/* WHY SOULLYTICS */}
-      <section className="section">
-        <div className="muted" style={{ textTransform: "uppercase", fontSize: 13 }}>
-          Why Soullytics
-        </div>
-
-        <h2>Built to say no.</h2>
-
-        <div className="grid-3">
-          <div className="card">
-            <h3>The old way</h3>
-            <ul className="muted">
-              <li>Dashboards that describe the past</li>
-              <li>Agencies selling optimism</li>
-              <li>Gut decisions under pressure</li>
-              <li>Scaling because “it feels right”</li>
-              <li>Killing winners too early</li>
-              <li>Letting losers burn cash</li>
-            </ul>
-          </div>
-
-          <div className="card">
-            <h3>The Soullytics way</h3>
-            <ul className="muted">
-              <li>Decisions, not charts</li>
-              <li>No emotional attachment</li>
-              <li>Statistical confidence</li>
-              <li>Clear RUN / SCALE / PAUSE / KILL</li>
-              <li>Protects capital first</li>
-              <li>Scales only when reality agrees</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       {/* BUILT FOR */}
       <section className="section">
         <h2>Built for people who respect reality.</h2>
