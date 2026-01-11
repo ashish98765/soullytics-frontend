@@ -1,68 +1,42 @@
 // src/app/page.tsx
 
+import { mockDecision } from "./lib/mockDecision";
+
 export default function DashboardPage() {
+  const { finalDecision, confidence, message } = mockDecision;
+
+  const decisionColor =
+    finalDecision === "RUN"
+      ? "text-green-500"
+      : finalDecision === "PAUSE"
+      ? "text-yellow-500"
+      : "text-red-500";
+
   return (
-    <div style={{ padding: "24px" }}>
-      <h1 style={{ fontSize: "28px", fontWeight: "bold" }}>
-        Soullytics Decision Dashboard
-      </h1>
+    <main className="p-6 text-white">
+      <h1 className="text-2xl font-bold mb-4">Soullytics Dashboard</h1>
 
-      <p style={{ marginTop: "8px", color: "#9ca3af" }}>
-        Cold, emotionless intelligence for ads & capital decisions
-      </p>
-
-      {/* Decision Card */}
-      <div
-        style={{
-          marginTop: "32px",
-          padding: "24px",
-          borderRadius: "12px",
-          background: "#111827",
-          border: "1px solid #1f2937",
-        }}
-      >
-        <h2 style={{ fontSize: "20px", marginBottom: "12px" }}>
-          Final Decision
-        </h2>
-
-        <div style={{ fontSize: "36px", fontWeight: "bold", color: "#22c55e" }}>
-          RUN
+      {/* Decision Status */}
+      <div className="mb-4">
+        <span className="text-sm text-gray-400">Final Decision</span>
+        <div className={`text-3xl font-bold ${decisionColor}`}>
+          {finalDecision}
         </div>
-
-        <p style={{ marginTop: "8px", color: "#9ca3af" }}>
-          System confidence: <strong>87%</strong>
-        </p>
       </div>
 
-      {/* Stats */}
-      <div
-        style={{
-          marginTop: "24px",
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "16px",
-        }}
-      >
-        <StatBox title="Engines Evaluated" value="40" />
-        <StatBox title="Warnings Raised" value="3" />
-        <StatBox title="Critical Fails" value="0" />
+      {/* Confidence */}
+      <div className="mb-4">
+        <span className="text-sm text-gray-400">Confidence</span>
+        <div className="text-2xl font-semibold">
+          {confidence}%
+        </div>
       </div>
-    </div>
+
+      {/* Message */}
+      <div className="bg-gray-800 p-4 rounded">
+        <span className="text-sm text-gray-400">System Message</span>
+        <p className="mt-1">{message}</p>
+      </div>
+    </main>
   );
 }
-
-function StatBox({ title, value }: { title: string; value: string }) {
-  return (
-    <div
-      style={{
-        padding: "16px",
-        borderRadius: "10px",
-        background: "#020617",
-        border: "1px solid #1f2937",
-      }}
-    >
-      <div style={{ fontSize: "14px", color: "#9ca3af" }}>{title}</div>
-      <div style={{ fontSize: "24px", fontWeight: "bold" }}>{value}</div>
-    </div>
-  );
-          }
