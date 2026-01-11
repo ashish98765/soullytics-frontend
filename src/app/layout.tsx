@@ -1,23 +1,21 @@
+// src/app/layout.tsx
 import "./global.css";
-import Sidebar from "./components/Sidebar";
+import { ReactNode } from "react";
 
 export const metadata = {
-  title: "Soullytics – Decision Intelligence OS",
+  title: "Soullytics — Decision Intelligence for Paid Growth",
+  description:
+    "Cold, unemotional decisions for ads. Know when to run, scale, pause or kill.",
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en">
-      <body>
-        <div style={{ display: "flex" }}>
-          <Sidebar />
-          <div style={{ flex: 1, padding: 24 }}>{children}</div>
-        </div>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
