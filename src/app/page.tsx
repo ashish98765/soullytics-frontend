@@ -319,6 +319,66 @@ export default function Page() {
     It’s here to stop you from lying to yourself.
   </p>
 </section>
+      {/* BUILT FOR SECTION */}
+<section style={{ marginTop: "80px" }}>
+  <h2
+    style={{
+      fontSize: "28px",
+      fontWeight: 600,
+      marginBottom: "32px",
+    }}
+  >
+    Built for people who respect reality.
+  </h2>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+      gap: "20px",
+    }}
+  >
+    {/* Card 1 */}
+    <div className="card">
+      <h3>Founders & Operators</h3>
+      <p>
+        You don’t want motivation.
+        <br />
+        You want to know if this thing should live or die.
+      </p>
+    </div>
+
+    {/* Card 2 */}
+    <div className="card">
+      <h3>Performance Marketers</h3>
+      <p>
+        Dashboards look “okay”.
+        <br />
+        But your gut says something is off.
+      </p>
+    </div>
+
+    {/* Card 3 */}
+    <div className="card">
+      <h3>Game & App Studios</h3>
+      <p>
+        Kill bad bets early.
+        <br />
+        Double down only when the math agrees.
+      </p>
+    </div>
+
+    {/* Card 4 */}
+    <div className="card">
+      <h3>Agencies (Internal Use)</h3>
+      <p>
+        Make recommendations
+        <br />
+        you can defend without stories or hope.
+      </p>
+    </div>
+  </div>
+</section>
     </main>
   );
 }
