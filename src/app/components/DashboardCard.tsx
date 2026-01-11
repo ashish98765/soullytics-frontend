@@ -1,34 +1,50 @@
-export default function DashboardCard({
-  title,
-  value,
-  color,
-}: {
+// src/app/app/components/DashboardCard.tsx
+
+type Props = {
   title: string;
-  value: string | number;
-  color?: string;
-}) {
+  value: string;
+  sub?: string;
+};
+
+export default function DashboardCard({ title, value, sub }: Props) {
   return (
     <div
+      className="card"
       style={{
-        background: "#0F172A",
-        border: "1px solid #1f2933",
-        borderRadius: 12,
         padding: 20,
-        minWidth: 200,
+        display: "flex",
+        flexDirection: "column",
+        gap: 8,
       }}
     >
-      <div style={{ fontSize: 12, color: "#94a3b8", marginBottom: 6 }}>
+      <div
+        style={{
+          fontSize: 13,
+          color: "#9CA3AF",
+        }}
+      >
         {title}
       </div>
+
       <div
         style={{
           fontSize: 28,
           fontWeight: 800,
-          color: color || "#E5E7EB",
         }}
       >
         {value}
       </div>
+
+      {sub && (
+        <div
+          style={{
+            fontSize: 12,
+            color: "#6B7280",
+          }}
+        >
+          {sub}
+        </div>
+      )}
     </div>
   );
 }
