@@ -571,6 +571,134 @@ export default function LandingPage() {
     It’s here to stop you from lying to yourself.
   </div>
 </section>
+      {/* SECTION — WHO THIS IS FOR */}
+<section
+  style={{
+    marginTop: 140,
+    maxWidth: 1100,
+    marginInline: "auto",
+    width: "100%",
+  }}
+>
+  <div
+    style={{
+      fontSize: 13,
+      letterSpacing: 1,
+      color: "#6B7280",
+      marginBottom: 12,
+      textTransform: "uppercase",
+    }}
+  >
+    Built for
+  </div>
+
+  <h2
+    style={{
+      fontSize: 36,
+      fontWeight: 800,
+      marginBottom: 56,
+    }}
+  >
+    People who respect reality.
+  </h2>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      gap: 32,
+    }}
+  >
+    {/* CARD 1 */}
+    <div
+      style={{
+        background: "#0B1220",
+        border: "1px solid #1F2937",
+        borderRadius: 16,
+        padding: 28,
+      }}
+    >
+      <h3 style={{ fontSize: 20, marginBottom: 12 }}>
+        Founders & Operators
+      </h3>
+      <p style={{ color: "#9CA3AF", lineHeight: 1.6 }}>
+        You don’t want motivation.
+        <br />
+        You want to know if this thing should live or die.
+      </p>
+    </div>
+
+    {/* CARD 2 */}
+    <div
+      style={{
+        background: "#0B1220",
+        border: "1px solid #1F2937",
+        borderRadius: 16,
+        padding: 28,
+      }}
+    >
+      <h3 style={{ fontSize: 20, marginBottom: 12 }}>
+        Performance Marketers
+      </h3>
+      <p style={{ color: "#9CA3AF", lineHeight: 1.6 }}>
+        When the dashboard looks “okay”
+        <br />
+        but your gut says something is off.
+      </p>
+    </div>
+
+    {/* CARD 3 */}
+    <div
+      style={{
+        background: "#0B1220",
+        border: "1px solid #1F2937",
+        borderRadius: 16,
+        padding: 28,
+      }}
+    >
+      <h3 style={{ fontSize: 20, marginBottom: 12 }}>
+        Game & App Studios
+      </h3>
+      <p style={{ color: "#9CA3AF", lineHeight: 1.6 }}>
+        Kill bad bets early.
+        <br />
+        Double down only when the math agrees.
+      </p>
+    </div>
+
+    {/* CARD 4 */}
+    <div
+      style={{
+        background: "#0B1220",
+        border: "1px solid #1F2937",
+        borderRadius: 16,
+        padding: 28,
+      }}
+    >
+      <h3 style={{ fontSize: 20, marginBottom: 12 }}>
+        Agencies (Internal Use)
+      </h3>
+      <p style={{ color: "#9CA3AF", lineHeight: 1.6 }}>
+        Make recommendations you can defend.
+        <br />
+        Not stories you hope are true.
+      </p>
+    </div>
+  </div>
+
+  <div
+    style={{
+      marginTop: 56,
+      fontSize: 16,
+      color: "#9CA3AF",
+      maxWidth: 720,
+    }}
+  >
+    If you want comfort, dashboards already exist.
+    <br />
+    If you want truth, you’re in the right place.
+  </div>
+</section>
     </main>
   );
 }
