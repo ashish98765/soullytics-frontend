@@ -1,10 +1,9 @@
 // src/app/layout.tsx
-
-import "./globals.css";
+import "./global.css";
 
 export const metadata = {
   title: "Soullytics",
-  description: "Cold, unemotional decisions for paid growth",
+  description: "Cold decisions for paid growth",
 };
 
 export default function RootLayout({
@@ -14,9 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
