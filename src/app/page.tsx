@@ -1,3 +1,5 @@
+const isMobile =
+  typeof window !== "undefined" && window.innerWidth < 768;
 export default function LandingPage() {
   return (
     <main
