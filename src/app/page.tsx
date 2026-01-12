@@ -1,289 +1,157 @@
-"use client";
+import React from "react";
 
-import { motion } from "framer-motion";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-};
-
-export default function Page() {
+export default function HomePage() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background:
-          "radial-gradient(1200px 600px at 20% -10%, #1e3a8a22, transparent), radial-gradient(800px 500px at 80% 10%, #22c55e22, transparent), #020617",
-        color: "#E5E7EB",
-        fontFamily: "Inter, system-ui, sans-serif",
-      }}
-    >
+    <main className="min-h-screen bg-[#0B0F1A] text-white">
       {/* ================= HERO ================= */}
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "120px 20px 80px" }}>
-        <motion.p
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          transition={{ duration: 0.5 }}
-          style={{
-            color: "#60A5FA",
-            letterSpacing: 1,
-            fontSize: 12,
-            marginBottom: 16,
-          }}
-        >
-          PAID MARKETING DECISION ENGINE
-        </motion.p>
+      <section className="max-w-7xl mx-auto px-6 pt-28 pb-24 text-center">
+        <span className="inline-block mb-4 px-4 py-1 rounded-full border border-indigo-500/30 text-indigo-400 text-sm">
+          Ads Operating System
+        </span>
 
-        <motion.h1
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          style={{
-            fontSize: 44,
-            fontWeight: 900,
-            lineHeight: 1.1,
-            marginBottom: 16,
-          }}
-        >
-          Stop burning ad money.
-          <br />
-          <span style={{ color: "#3B82F6" }}>Get a decision.</span>
-        </motion.h1>
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
+          Stop Guessing Ads.<br />
+          <span className="text-indigo-400">
+            Make Decisions With Proof.
+          </span>
+        </h1>
 
-        <motion.p
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          style={{
-            color: "#9CA3AF",
-            maxWidth: 560,
-            fontSize: 16,
-            marginBottom: 32,
-          }}
-        >
-          Soullytics analyzes live ads using a cold, rule-based engine and tells you —
-          without emotion — what to <b>RUN</b>, <b>SCALE</b>, <b>PAUSE</b> or <b>KILL</b>.
-        </motion.p>
+        <p className="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
+          Soullytics connects to your Google Ads and Meta Ads,
+          analyzes real performance data, predicts risk,
+          and tells you exactly when to <b>RUN</b>, <b>PAUSE</b>,
+          <b>STOP</b>, or <b>SCALE</b> — with clear reasons
+          and money impact.
+        </p>
 
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          style={{ display: "flex", gap: 12 }}
-        >
-          <button
-            style={{
-              background: "#2563EB",
-              color: "#fff",
-              padding: "12px 20px",
-              borderRadius: 10,
-              fontWeight: 600,
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
-            See a real decision
+        <div className="mt-10 flex justify-center gap-4">
+          <button className="px-6 py-3 rounded-lg bg-indigo-500 hover:bg-indigo-600 transition font-medium">
+            Analyze Your Ads
           </button>
-          <button
-            style={{
-              background: "transparent",
-              color: "#E5E7EB",
-              padding: "12px 20px",
-              borderRadius: 10,
-              border: "1px solid #1F2937",
-              cursor: "pointer",
-            }}
-          >
-            Login
+          <button className="px-6 py-3 rounded-lg border border-white/20 hover:border-white/40 transition">
+            See How It Works
           </button>
-        </motion.div>
+        </div>
+
+        <p className="mt-4 text-sm text-gray-500">
+          2 ads free · No credit card required
+        </p>
+      </section>
+
+      {/* ================= PROBLEM ================= */}
+      <section className="bg-[#0F1424] py-24">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+          <div>
+            <h2 className="text-3xl font-semibold mb-4">
+              Ads Fail Because Decisions Are Emotional
+            </h2>
+            <p className="text-gray-400 leading-relaxed">
+              Most advertisers scale ads because of temporary spikes,
+              pause ads too early out of fear,
+              or keep burning money hoping things will improve.
+              <br /><br />
+              Dashboards show numbers.
+              They don’t tell you what decision to take.
+            </p>
+          </div>
+
+          <div className="bg-[#0B0F1A] border border-white/10 rounded-xl p-6">
+            <ul className="space-y-4 text-gray-300">
+              <li>• “CTR is high but sales are low”</li>
+              <li>• “ROAS looks good but CPA is unstable”</li>
+              <li>• “Should I increase budget or wait?”</li>
+              <li>• “Am I burning money without realizing it?”</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= SOLUTION ================= */}
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-semibold mb-6">
+            Soullytics Is Not Another Dashboard
+          </h2>
+          <p className="text-gray-400 max-w-3xl mx-auto mb-16">
+            Soullytics is a decision system.
+            It does the thinking for you and tells you
+            what action actually makes sense —
+            before your budget gets damaged.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 text-left">
+            <Feature
+              title="Decision First"
+              desc="RUN, PAUSE, STOP or SCALE — not just charts and metrics."
+            />
+            <Feature
+              title="Reason & Risk"
+              desc="Every decision comes with clear reasons and future risk."
+            />
+            <Feature
+              title="Money Advice"
+              desc="Know whether to increase budget, reduce it, or hold."
+            />
+          </div>
+        </div>
       </section>
 
       {/* ================= HOW IT WORKS ================= */}
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 20px" }}>
-        <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 32 }}>
-          How the Soullytics engine works
-        </h2>
+      <section className="bg-[#0F1424] py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-semibold text-center mb-16">
+            How Soullytics Works
+          </h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: 20,
-          }}
-        >
-          {[
-            {
-              title: "Signal ingestion",
-              text: "CTR, CPA, CVR, spend velocity, volatility, fatigue, platform bias, audience saturation.",
-            },
-            {
-              title: "Reality checks",
-              text: "Statistical stability, false-positive detection, momentum decay, risk thresholds.",
-            },
-            {
-              title: "Decision synthesis",
-              text: "40+ decision rules collapse everything into one cold outcome. No charts. No stories.",
-            },
-          ].map((c) => (
-            <motion.div
-              key={c.title}
-              whileHover={{ y: -6 }}
-              style={{
-                background: "#020617",
-                border: "1px solid #1F2937",
-                borderRadius: 16,
-                padding: 24,
-              }}
-            >
-              <h3 style={{ fontSize: 18, marginBottom: 8 }}>{c.title}</h3>
-              <p style={{ color: "#9CA3AF", fontSize: 14 }}>{c.text}</p>
-            </motion.div>
-          ))}
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <Step number="1" text="Connect Google Ads or Meta Ads" />
+            <Step number="2" text="Soullytics analyzes real metrics" />
+            <Step number="3" text="Predicts risk & future outcome" />
+            <Step number="4" text="Gives a clear decision with reasons" />
+          </div>
         </div>
       </section>
 
-      {/* ================= WHAT IT EVALUATES ================= */}
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "40px 20px" }}>
-        <h2 style={{ fontSize: 26, fontWeight: 800, marginBottom: 24 }}>
-          What Soullytics evaluates
+      {/* ================= CTA ================= */}
+      <section className="py-24 text-center">
+        <h2 className="text-3xl font-semibold mb-6">
+          Stop Losing Money To Guesswork
         </h2>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-          {[
-            "Creative performance & fatigue",
-            "Audience match & saturation",
-            "Budget efficiency & burn rate",
-            "Platform bias & volatility",
-            "Scaling readiness & risk",
-            "Capital protection logic",
-          ].map((t) => (
-            <span
-              key={t}
-              style={{
-                padding: "8px 14px",
-                borderRadius: 999,
-                background: "#020617",
-                border: "1px solid #1F2937",
-                color: "#9CA3AF",
-                fontSize: 13,
-              }}
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-      </section>
+        <p className="text-gray-400 mb-10">
+          Let Soullytics tell you what decision actually makes sense.
+        </p>
 
-      {/* ================= WHY TEAMS LOSE ================= */}
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 20px" }}>
-        <h2 style={{ fontSize: 26, fontWeight: 800, marginBottom: 24 }}>
-          Why most teams lose money
-        </h2>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: 20,
-          }}
-        >
-          {[
-            "Dashboards look green while cash keeps bleeding",
-            "Early spikes are mistaken for real success",
-            "Bad ads survive because killing feels scary",
-            "Good ads die early due to human fear",
-          ].map((t) => (
-            <div
-              key={t}
-              style={{
-                background: "#020617",
-                border: "1px solid #7f1d1d",
-                borderLeft: "4px solid #ef4444",
-                borderRadius: 14,
-                padding: 20,
-                color: "#FCA5A5",
-                fontSize: 14,
-              }}
-            >
-              {t}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= OUTPUTS ================= */}
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "60px 20px" }}>
-        <h2 style={{ fontSize: 26, fontWeight: 800, marginBottom: 32 }}>
-          Soullytics outputs only four decisions
-        </h2>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: 20,
-          }}
-        >
-          {[
-            { t: "RUN", c: "#22c55e" },
-            { t: "SCALE", c: "#3b82f6" },
-            { t: "PAUSE", c: "#facc15" },
-            { t: "KILL", c: "#ef4444" },
-          ].map((d) => (
-            <motion.div
-              key={d.t}
-              whileHover={{ scale: 1.04 }}
-              style={{
-                border: `1px solid ${d.c}`,
-                borderRadius: 16,
-                padding: 24,
-                textAlign: "center",
-              }}
-            >
-              <h3 style={{ color: d.c, fontSize: 20, marginBottom: 8 }}>
-                {d.t}
-              </h3>
-              <p style={{ color: "#9CA3AF", fontSize: 14 }}>
-                Clear, defensible decision.
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= FINAL CTA ================= */}
-      <section
-        style={{
-          textAlign: "center",
-          padding: "100px 20px 120px",
-        }}
-      >
-        <h2 style={{ fontSize: 30, fontWeight: 900, marginBottom: 16 }}>
-          Dashboards explain the past.
-          <br />
-          <span style={{ color: "#3B82F6" }}>
-            Soullytics decides the future.
-          </span>
-        </h2>
-        <button
-          style={{
-            marginTop: 24,
-            background: "#2563EB",
-            color: "#fff",
-            padding: "14px 26px",
-            borderRadius: 12,
-            fontWeight: 700,
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Run the engine
+        <button className="px-8 py-4 rounded-xl bg-indigo-500 hover:bg-indigo-600 transition font-medium text-lg">
+          Analyze 2 Ads Free
         </button>
       </section>
+
+      {/* ================= FOOTER ================= */}
+      <footer className="border-t border-white/10 py-8 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} Soullytics. All rights reserved.
+      </footer>
     </main>
+  );
+}
+
+/* ====== COMPONENTS ====== */
+
+function Feature({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div className="border border-white/10 rounded-xl p-6 bg-[#0B0F1A]">
+      <h3 className="font-medium text-lg mb-2">{title}</h3>
+      <p className="text-gray-400 text-sm">{desc}</p>
+    </div>
+  );
+}
+
+function Step({ number, text }: { number: string; text: string }) {
+  return (
+    <div>
+      <div className="w-10 h-10 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-500 text-white font-semibold">
+        {number}
+      </div>
+      <p className="text-gray-300 text-sm">{text}</p>
+    </div>
   );
 }
