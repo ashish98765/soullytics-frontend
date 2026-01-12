@@ -1,301 +1,243 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export default function Page() {
   return (
-    <main style={bg}>
+    <main
+      style={{
+        minHeight: "100vh",
+        background:
+          "radial-gradient(circle at top, #0b1b3a 0%, #05070f 60%)",
+        color: "#E6ECFF",
+        fontFamily: "Inter, system-ui, sans-serif",
+      }}
+    >
       {/* ================= HERO ================= */}
-      <section style={sectionTight}>
-        <div style={eyebrow}>PAID MARKETING DECISION ENGINE</div>
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "120px 16px" }}>
+        <motion.div initial="hidden" animate="visible" variants={fadeUp}>
+          <div style={{ color: "#6AA6FF", fontSize: 12, letterSpacing: 1.2 }}>
+            PAID MARKETING DECISION ENGINE
+          </div>
 
-        <h1 style={heroTitle}>
-          Stop burning ad money.
-          <br />
-          <span style={{ color: "#4F7DFF" }}>Get a decision.</span>
-        </h1>
+          <h1 style={{ fontSize: 46, fontWeight: 900, margin: "12px 0" }}>
+            Stop burning ad money.
+            <br />
+            <span style={{ color: "#6AA6FF" }}>Get a decision.</span>
+          </h1>
 
-        <p style={heroSub}>
-          Soullytics analyzes live ads using a rule-based AI engine and tells you
-          — without emotion — what to <b>RUN</b>, <b>SCALE</b>, <b>PAUSE</b> or{" "}
-          <b>KILL</b>.
-        </p>
+          <p style={{ color: "#9AA6C9", maxWidth: 520, fontSize: 16 }}>
+            Your dashboards show numbers.  
+            <br />
+            <b>Soullytics shows reality.</b>
+          </p>
 
-        <div style={ctaRow}>
-          <button style={ctaPrimary}>See a real decision</button>
-          <button style={ctaSecondary}>Login</button>
-        </div>
+          <div style={{ marginTop: 28, display: "flex", gap: 12 }}>
+            <button
+              style={{
+                background: "#3B82F6",
+                color: "#fff",
+                border: "none",
+                padding: "14px 20px",
+                borderRadius: 10,
+                fontWeight: 600,
+              }}
+            >
+              See a real decision
+            </button>
+            <button
+              style={{
+                background: "transparent",
+                color: "#E6ECFF",
+                border: "1px solid #1F2A44",
+                padding: "14px 20px",
+                borderRadius: 10,
+              }}
+            >
+              Login
+            </button>
+          </div>
+        </motion.div>
       </section>
 
-      {/* ================= ENGINE ================= */}
-      <section style={section}>
-        <h2 style={h2}>How the Soullytics engine works</h2>
+      {/* ================= WHY TEAMS LOSE ================= */}
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "0 16px 120px" }}>
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          viewport={{ once: true }}
+          style={{ fontSize: 28, marginBottom: 32 }}
+        >
+          Why most teams lose money
+        </motion.h2>
 
-        <div style={grid3}>
-          <EngineCard
-            title="Signal ingestion"
-            text="CTR, CPA, CVR, spend velocity, volatility, fatigue, platform bias, audience saturation."
-          />
-          <EngineCard
-            title="Reality checks"
-            text="Statistical stability, false-positive detection, momentum decay, risk thresholds."
-          />
-          <EngineCard
-            title="Decision synthesis"
-            text="40+ decision rules combine into a single cold outcome — no charts, no stories."
-          />
-        </div>
-      </section>
-
-      {/* ================= METRICS ================= */}
-      <section style={sectionTight}>
-        <h2 style={h2}>What Soullytics evaluates</h2>
-
-        <div style={grid}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: 20,
+          }}
+        >
           {[
-            "Creative performance & fatigue",
-            "Audience match & saturation",
-            "Budget efficiency & burn rate",
-            "Platform bias & volatility",
-            "Scaling readiness & risk",
-            "Capital protection logic",
-          ].map((t) => (
-            <div key={t} style={metricChip}>{t}</div>
+            "Dashboards look green while cash keeps bleeding",
+            "Early spikes get mistaken for real success",
+            "Bad ads survive because killing feels scary",
+            "Good ads die early due to human fear",
+          ].map((text, i) => (
+            <motion.div
+              key={i}
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeUp}
+              viewport={{ once: true }}
+              style={{
+                background: "#0A1224",
+                border: "1px solid #2B3A5F",
+                borderRadius: 14,
+                padding: 22,
+                color: "#B8C2E6",
+              }}
+            >
+              {text}
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* ================= FAILURES ================= */}
-      <section style={section}>
-        <h2 style={h2}>Why most teams lose money</h2>
+      {/* ================= ENGINE ================= */}
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "0 16px 120px" }}>
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          viewport={{ once: true }}
+          style={{ fontSize: 28, marginBottom: 40 }}
+        >
+          How the Soullytics engine works
+        </motion.h2>
 
-        <div style={grid}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: 24,
+          }}
+        >
           {[
-            "Dashboards look green while cash keeps bleeding",
-            "Early spikes are mistaken for real success",
-            "Bad ads survive because killing feels scary",
-            "Good ads die early due to human fear",
-          ].map((text) => (
-            <div key={text} style={diagnosticCard}>
-              <div style={dangerBar} />
-              <p style={diagnosticText}>{text}</p>
-            </div>
+            {
+              title: "Signal ingestion",
+              desc: "CTR, CPA, CVR, spend velocity, volatility, fatigue, platform bias.",
+            },
+            {
+              title: "Reality checks",
+              desc: "False-positive detection, momentum decay, risk thresholds.",
+            },
+            {
+              title: "Decision synthesis",
+              desc: "40+ rules collapse chaos into one cold outcome.",
+            },
+          ].map((s, i) => (
+            <motion.div
+              key={i}
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeUp}
+              viewport={{ once: true }}
+              style={{
+                background: "#0F162D",
+                border: "1px solid #1F2A44",
+                borderRadius: 16,
+                padding: 26,
+              }}
+            >
+              <h3 style={{ marginBottom: 10 }}>{s.title}</h3>
+              <p style={{ color: "#9AA6C9", fontSize: 14 }}>{s.desc}</p>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* ================= OUTPUT ================= */}
-      <section style={sectionTight}>
-        <h2 style={h2}>Soullytics outputs only four decisions</h2>
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "0 16px 120px" }}>
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          viewport={{ once: true }}
+          style={{ fontSize: 28, marginBottom: 32 }}
+        >
+          Soullytics outputs only four decisions
+        </motion.h2>
 
-        <div style={grid4}>
-          <Decision label="RUN" color="#22C55E" />
-          <Decision label="SCALE" color="#4F7DFF" />
-          <Decision label="PAUSE" color="#FACC15" />
-          <Decision label="KILL" color="#FF5A5A" />
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: 20,
+          }}
+        >
+          {[
+            { label: "RUN", color: "#22C55E" },
+            { label: "SCALE", color: "#3B82F6" },
+            { label: "PAUSE", color: "#FACC15" },
+            { label: "KILL", color: "#EF4444" },
+          ].map((d) => (
+            <motion.div
+              key={d.label}
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeUp}
+              viewport={{ once: true }}
+              style={{
+                border: `1px solid ${d.color}`,
+                borderRadius: 16,
+                padding: 26,
+                textAlign: "center",
+              }}
+            >
+              <div style={{ color: d.color, fontWeight: 800 }}>{d.label}</div>
+              <div style={{ fontSize: 13, color: "#9AA6C9", marginTop: 8 }}>
+                Clear, defensible decision
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
       {/* ================= FINAL CTA ================= */}
-      <section style={finalSection}>
-        <h2 style={finalTitle}>
+      <section style={{ textAlign: "center", paddingBottom: 120 }}>
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          viewport={{ once: true }}
+          style={{ fontSize: 32 }}
+        >
           Dashboards explain the past.
           <br />
-          <span style={{ color: "#4F7DFF" }}>
-            Soullytics decides the future.
-          </span>
-        </h2>
+          <span style={{ color: "#6AA6FF" }}>Soullytics decides the future.</span>
+        </motion.h2>
 
-        <button style={{ ...ctaPrimary, marginTop: 24 }}>
+        <button
+          style={{
+            marginTop: 28,
+            background: "#3B82F6",
+            color: "#fff",
+            border: "none",
+            padding: "14px 22px",
+            borderRadius: 12,
+            fontWeight: 700,
+          }}
+        >
           Run the engine
         </button>
       </section>
     </main>
   );
 }
-
-/* ================= COMPONENTS ================= */
-
-function EngineCard({ title, text }: { title: string; text: string }) {
-  return (
-    <div style={engineCard}>
-      <h3 style={engineTitle}>{title}</h3>
-      <p style={engineText}>{text}</p>
-    </div>
-  );
-}
-
-function Decision({ label, color }: { label: string; color: string }) {
-  return (
-    <div style={{ ...decisionCard, borderColor: color, color }}>
-      {label}
-      <div style={decisionSub}>Clear, defensible decision</div>
-    </div>
-  );
-}
-
-/* ================= STYLES ================= */
-
-const bg = {
-  minHeight: "100vh",
-  background:
-    "radial-gradient(900px 500px at top left, #0B1A3A 0%, #060B18 50%, #02040A 100%)",
-  color: "#EAF0FF",
-  fontFamily: "Inter, system-ui, sans-serif",
-};
-
-const section = {
-  maxWidth: 1100,
-  margin: "0 auto",
-  padding: "96px 16px",
-};
-
-const sectionTight = {
-  ...section,
-  padding: "72px 16px",
-};
-
-const finalSection = {
-  ...section,
-  textAlign: "center" as const,
-  paddingBottom: 140,
-};
-
-const eyebrow = {
-  color: "#7AA2FF",
-  fontSize: 13,
-  letterSpacing: 1,
-};
-
-const heroTitle = {
-  fontSize: 44,
-  fontWeight: 900,
-  lineHeight: 1.1,
-  marginTop: 12,
-};
-
-const heroSub = {
-  maxWidth: 560,
-  color: "#A9B6E6",
-  fontSize: 16,
-  marginTop: 18,
-};
-
-const h2 = {
-  fontSize: 30,
-  fontWeight: 800,
-  marginBottom: 28,
-};
-
-const finalTitle = {
-  fontSize: 32,
-  fontWeight: 900,
-};
-
-const ctaRow = {
-  display: "flex",
-  gap: 12,
-  marginTop: 26,
-};
-
-const ctaPrimary = {
-  background: "#4F7DFF",
-  color: "#fff",
-  border: "none",
-  padding: "12px 20px",
-  borderRadius: 10,
-  fontWeight: 600,
-  cursor: "pointer",
-};
-
-const ctaSecondary = {
-  background: "transparent",
-  color: "#EAF0FF",
-  border: "1px solid #2A3A6A",
-  padding: "12px 20px",
-  borderRadius: 10,
-  fontWeight: 600,
-  cursor: "pointer",
-};
-
-const grid = {
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-  gap: 18,
-};
-
-const grid3 = {
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-  gap: 20,
-};
-
-const grid4 = {
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-  gap: 18,
-};
-
-const engineCard = {
-  background: "#050914",
-  border: "1px solid #1E2A55",
-  borderRadius: 16,
-  padding: 24,
-};
-
-const engineTitle = {
-  fontSize: 18,
-  fontWeight: 700,
-  marginBottom: 10,
-};
-
-const engineText = {
-  fontSize: 14,
-  color: "#A9B6E6",
-};
-
-const metricChip = {
-  background: "#050914",
-  border: "1px solid #1E2A55",
-  borderRadius: 999,
-  padding: "10px 14px",
-  fontSize: 13,
-  color: "#A9B6E6",
-};
-
-const diagnosticCard = {
-  background: "#050914",
-  border: "1px solid #1E2A55",
-  borderRadius: 14,
-  padding: 18,
-  position: "relative" as const,
-};
-
-const dangerBar = {
-  position: "absolute" as const,
-  left: 0,
-  top: 0,
-  bottom: 0,
-  width: 4,
-  background: "linear-gradient(180deg, #FF5A5A, #7A1F1F)",
-  borderRadius: "14px 0 0 14px",
-};
-
-const diagnosticText = {
-  marginLeft: 12,
-  fontSize: 14,
-  color: "#A9B6E6",
-};
-
-const decisionCard = {
-  border: "1.5px solid",
-  borderRadius: 16,
-  padding: 26,
-  textAlign: "center" as const,
-  fontWeight: 800,
-  fontSize: 20,
-  background: "rgba(255,255,255,0.02)",
-};
-
-const decisionSub = {
-  fontSize: 12,
-  fontWeight: 500,
-  marginTop: 8,
-  color: "#A9B6E6",
-};
