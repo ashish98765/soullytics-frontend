@@ -1,16 +1,8 @@
 export default function Page() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background:
-          "radial-gradient(1200px 600px at top left, #0B1A3A 0%, #060B18 45%, #02040A 100%)",
-        color: "#EAF0FF",
-        fontFamily: "Inter, system-ui, sans-serif",
-      }}
-    >
+    <main style={bg}>
       {/* ================= HERO ================= */}
-      <section style={section}>
+      <section style={sectionTight}>
         <div style={eyebrow}>PAID MARKETING DECISION ENGINE</div>
 
         <h1 style={heroTitle}>
@@ -20,27 +12,65 @@ export default function Page() {
         </h1>
 
         <p style={heroSub}>
-          Soullytics judges ads <b>after they go live</b> and tells you —
-          clearly and coldly — what to <b>RUN</b>, <b>SCALE</b>, <b>PAUSE</b> or{" "}
+          Soullytics analyzes live ads using a rule-based AI engine and tells you
+          — without emotion — what to <b>RUN</b>, <b>SCALE</b>, <b>PAUSE</b> or{" "}
           <b>KILL</b>.
         </p>
 
-        <div style={{ display: "flex", gap: 12, marginTop: 28 }}>
+        <div style={ctaRow}>
           <button style={ctaPrimary}>See a real decision</button>
           <button style={ctaSecondary}>Login</button>
         </div>
       </section>
 
-      {/* ================= WHY TEAMS LOSE ================= */}
+      {/* ================= ENGINE ================= */}
+      <section style={section}>
+        <h2 style={h2}>How the Soullytics engine works</h2>
+
+        <div style={grid3}>
+          <EngineCard
+            title="Signal ingestion"
+            text="CTR, CPA, CVR, spend velocity, volatility, fatigue, platform bias, audience saturation."
+          />
+          <EngineCard
+            title="Reality checks"
+            text="Statistical stability, false-positive detection, momentum decay, risk thresholds."
+          />
+          <EngineCard
+            title="Decision synthesis"
+            text="40+ decision rules combine into a single cold outcome — no charts, no stories."
+          />
+        </div>
+      </section>
+
+      {/* ================= METRICS ================= */}
+      <section style={sectionTight}>
+        <h2 style={h2}>What Soullytics evaluates</h2>
+
+        <div style={grid}>
+          {[
+            "Creative performance & fatigue",
+            "Audience match & saturation",
+            "Budget efficiency & burn rate",
+            "Platform bias & volatility",
+            "Scaling readiness & risk",
+            "Capital protection logic",
+          ].map((t) => (
+            <div key={t} style={metricChip}>{t}</div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= FAILURES ================= */}
       <section style={section}>
         <h2 style={h2}>Why most teams lose money</h2>
 
         <div style={grid}>
           {[
             "Dashboards look green while cash keeps bleeding",
-            "Early spikes are mistaken for sustainable success",
-            "Bad ads stay alive because no one wants to kill them",
-            "Good ads die early due to fear, not data",
+            "Early spikes are mistaken for real success",
+            "Bad ads survive because killing feels scary",
+            "Good ads die early due to human fear",
           ].map((text) => (
             <div key={text} style={diagnosticCard}>
               <div style={dangerBar} />
@@ -50,9 +80,9 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ================= OUTPUTS ================= */}
-      <section style={section}>
-        <h2 style={h2}>Soullytics gives only four outputs</h2>
+      {/* ================= OUTPUT ================= */}
+      <section style={sectionTight}>
+        <h2 style={h2}>Soullytics outputs only four decisions</h2>
 
         <div style={grid4}>
           <Decision label="RUN" color="#22C55E" />
@@ -62,16 +92,17 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ================= STATEMENT ================= */}
-      <section style={{ ...section, textAlign: "center", paddingBottom: 160 }}>
-        <h2 style={{ ...h2, marginBottom: 12 }}>
+      {/* ================= FINAL CTA ================= */}
+      <section style={finalSection}>
+        <h2 style={finalTitle}>
           Dashboards explain the past.
-        </h2>
-        <h2 style={{ ...h2, color: "#4F7DFF" }}>
-          Soullytics decides the future.
+          <br />
+          <span style={{ color: "#4F7DFF" }}>
+            Soullytics decides the future.
+          </span>
         </h2>
 
-        <button style={{ ...ctaPrimary, marginTop: 28 }}>
+        <button style={{ ...ctaPrimary, marginTop: 24 }}>
           Run the engine
         </button>
       </section>
@@ -79,36 +110,51 @@ export default function Page() {
   );
 }
 
-/* ================= COMPONENT ================= */
+/* ================= COMPONENTS ================= */
+
+function EngineCard({ title, text }: { title: string; text: string }) {
+  return (
+    <div style={engineCard}>
+      <h3 style={engineTitle}>{title}</h3>
+      <p style={engineText}>{text}</p>
+    </div>
+  );
+}
 
 function Decision({ label, color }: { label: string; color: string }) {
   return (
-    <div
-      style={{
-        border: `1.5px solid ${color}`,
-        borderRadius: 16,
-        padding: 28,
-        textAlign: "center",
-        fontWeight: 800,
-        fontSize: 20,
-        color,
-        background: "rgba(255,255,255,0.02)",
-      }}
-    >
+    <div style={{ ...decisionCard, borderColor: color, color }}>
       {label}
-      <div style={{ fontSize: 12, fontWeight: 500, marginTop: 8, color: "#A9B6E6" }}>
-        Clear, defensible decision
-      </div>
+      <div style={decisionSub}>Clear, defensible decision</div>
     </div>
   );
 }
 
 /* ================= STYLES ================= */
 
+const bg = {
+  minHeight: "100vh",
+  background:
+    "radial-gradient(900px 500px at top left, #0B1A3A 0%, #060B18 50%, #02040A 100%)",
+  color: "#EAF0FF",
+  fontFamily: "Inter, system-ui, sans-serif",
+};
+
 const section = {
   maxWidth: 1100,
   margin: "0 auto",
-  padding: "120px 16px",
+  padding: "96px 16px",
+};
+
+const sectionTight = {
+  ...section,
+  padding: "72px 16px",
+};
+
+const finalSection = {
+  ...section,
+  textAlign: "center" as const,
+  paddingBottom: 140,
 };
 
 const eyebrow = {
@@ -125,16 +171,27 @@ const heroTitle = {
 };
 
 const heroSub = {
-  maxWidth: 520,
+  maxWidth: 560,
   color: "#A9B6E6",
   fontSize: 16,
-  marginTop: 20,
+  marginTop: 18,
 };
 
 const h2 = {
-  fontSize: 32,
+  fontSize: 30,
   fontWeight: 800,
-  marginBottom: 32,
+  marginBottom: 28,
+};
+
+const finalTitle = {
+  fontSize: 32,
+  fontWeight: 900,
+};
+
+const ctaRow = {
+  display: "flex",
+  gap: 12,
+  marginTop: 26,
 };
 
 const ctaPrimary = {
@@ -159,21 +216,54 @@ const ctaSecondary = {
 
 const grid = {
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+  gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+  gap: 18,
+};
+
+const grid3 = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
   gap: 20,
 };
 
 const grid4 = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-  gap: 20,
+  gap: 18,
+};
+
+const engineCard = {
+  background: "#050914",
+  border: "1px solid #1E2A55",
+  borderRadius: 16,
+  padding: 24,
+};
+
+const engineTitle = {
+  fontSize: 18,
+  fontWeight: 700,
+  marginBottom: 10,
+};
+
+const engineText = {
+  fontSize: 14,
+  color: "#A9B6E6",
+};
+
+const metricChip = {
+  background: "#050914",
+  border: "1px solid #1E2A55",
+  borderRadius: 999,
+  padding: "10px 14px",
+  fontSize: 13,
+  color: "#A9B6E6",
 };
 
 const diagnosticCard = {
   background: "#050914",
   border: "1px solid #1E2A55",
   borderRadius: 14,
-  padding: 20,
+  padding: 18,
   position: "relative" as const,
 };
 
@@ -189,6 +279,23 @@ const dangerBar = {
 
 const diagnosticText = {
   marginLeft: 12,
-  color: "#A9B6E6",
   fontSize: 14,
+  color: "#A9B6E6",
+};
+
+const decisionCard = {
+  border: "1.5px solid",
+  borderRadius: 16,
+  padding: 26,
+  textAlign: "center" as const,
+  fontWeight: 800,
+  fontSize: 20,
+  background: "rgba(255,255,255,0.02)",
+};
+
+const decisionSub = {
+  fontSize: 12,
+  fontWeight: 500,
+  marginTop: 8,
+  color: "#A9B6E6",
 };
