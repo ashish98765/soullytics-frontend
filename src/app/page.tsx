@@ -4,200 +4,262 @@ export default function Page() {
       style={{
         minHeight: "100vh",
         background:
-          "radial-gradient(circle at top, #0F172A 0%, #020617 65%)",
-        color: "#E5E7EB",
+          "radial-gradient(1200px 600px at top left, #0B1A3A 0%, #060B18 40%, #02040A 100%)",
+        color: "#EAF0FF",
         fontFamily: "Inter, system-ui, sans-serif",
       }}
     >
       {/* ================= HERO ================= */}
-      <section
-        style={{
-          maxWidth: 1120,
-          margin: "0 auto",
-          padding: "140px 16px 90px",
-        }}
-      >
-        <span
-          style={{
-            color: "#2563EB",
-            fontWeight: 700,
-            letterSpacing: 1,
-            fontSize: 13,
-            textTransform: "uppercase",
-          }}
-        >
-          Paid Marketing Decision Engine
-        </span>
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "120px 16px 80px" }}>
+        <div style={{ color: "#7AA2FF", fontSize: 13, letterSpacing: 1 }}>
+          PAID MARKETING DECISION ENGINE
+        </div>
 
-        <h1
-          style={{
-            fontSize: 48,
-            fontWeight: 900,
-            lineHeight: 1.05,
-            marginTop: 16,
-            marginBottom: 18,
-          }}
-        >
+        <h1 style={{ fontSize: 44, fontWeight: 900, lineHeight: 1.1, marginTop: 12 }}>
           Stop burning ad money.
           <br />
-          <span style={{ color: "#2563EB" }}>Get a decision.</span>
+          <span style={{ color: "#4F7DFF" }}>Get a decision.</span>
         </h1>
 
-        <p
-          style={{
-            maxWidth: 620,
-            fontSize: 18,
-            color: "#9CA3AF",
-            marginBottom: 32,
-          }}
-        >
-          Soullytics judges your ads after they go live.
-          <br />
-          It tells you — clearly and coldly — what to{" "}
-          <span style={{ color: "#22C55E" }}>RUN</span>,{" "}
-          <span style={{ color: "#22C55E" }}>SCALE</span>,{" "}
-          <span style={{ color: "#FACC15" }}>PAUSE</span> or{" "}
-          <span style={{ color: "#EF4444" }}>KILL</span>.
+        <p style={{ maxWidth: 520, color: "#A9B6E6", fontSize: 16, marginTop: 20 }}>
+          Soullytics watches your ads after they go live and tells you — clearly
+          and coldly — what to <b>RUN</b>, <b>SCALE</b>, <b>PAUSE</b> or <b>KILL</b>.
         </p>
 
-        <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-          <button
-            style={{
-              background: "#2563EB",
-              color: "#fff",
-              border: "none",
-              padding: "14px 22px",
-              borderRadius: 12,
-              fontWeight: 700,
-              cursor: "pointer",
-            }}
-          >
-            See a real decision
-          </button>
-
-          <button
-            style={{
-              background: "#0B1220",
-              color: "#E5E7EB",
-              border: "1px solid #1F2937",
-              padding: "14px 22px",
-              borderRadius: 12,
-              fontWeight: 600,
-              cursor: "pointer",
-            }}
-          >
-            Login
-          </button>
+        <div style={{ display: "flex", gap: 12, marginTop: 28 }}>
+          <button style={ctaPrimary}>See a real decision</button>
+          <button style={ctaSecondary}>Login</button>
         </div>
       </section>
 
-      {/* ================= PAIN ================= */}
-      <section
-        style={{
-          maxWidth: 1120,
-          margin: "0 auto",
-          padding: "0 16px 120px",
-        }}
-      >
-        <h2 style={{ fontSize: 34, fontWeight: 800, marginBottom: 28 }}>
-          Why most teams lose money
-        </h2>
+      {/* ================= DECISION DEMO ================= */}
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "0 16px 120px" }}>
+        <h2 style={h2}>This is what Soullytics actually does</h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: 22,
-          }}
-        >
+        <div style={decisionCard}>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div>
+              <div style={label}>Campaign</div>
+              <div style={value}>META_US_CREATIVE_07</div>
+            </div>
+            <div>
+              <div style={label}>Confidence</div>
+              <div style={{ ...value, color: "#FF5A5A" }}>91%</div>
+            </div>
+          </div>
+
+          <div style={{ marginTop: 20 }}>
+            <div style={label}>Decision</div>
+            <div style={{ fontSize: 26, fontWeight: 800, color: "#FF5A5A" }}>
+              ❌ KILL
+            </div>
+          </div>
+
+          <ul style={reasonList}>
+            <li>CPA volatility exceeded recovery threshold</li>
+            <li>Creative fatigue detected on day 4</li>
+            <li>No statistically valid rebound probability</li>
+          </ul>
+
+          <div style={footnote}>No charts. No opinions. Just a decision.</div>
+        </div>
+      </section>
+
+      {/* ================= WHY TEAMS LOSE ================= */}
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "0 16px 120px" }}>
+        <h2 style={h2}>Why most teams lose money</h2>
+
+        <div style={grid3}>
           {[
-            "Dashboards look green, cash still bleeds",
+            "Dashboards look green while cash still bleeds",
             "Early spikes get mistaken for success",
             "Bad ads stay alive because of hope",
             "Good ads die because of fear",
           ].map((t) => (
-            <div
-              key={t}
-              style={{
-                background: "#0B1220",
-                border: "1px solid #1F2937",
-                borderRadius: 16,
-                padding: 24,
-                color: "#9CA3AF",
-              }}
-            >
-              <span style={{ color: "#EF4444", fontWeight: 700 }}>✕</span> {t}
+            <div key={t} style={problemCard}>
+              ❌ {t}
             </div>
           ))}
         </div>
       </section>
 
-      {/* ================= OUTPUT ================= */}
-      <section
-        style={{
-          maxWidth: 1120,
-          margin: "0 auto",
-          padding: "0 16px 120px",
-        }}
-      >
-        <h2 style={{ fontSize: 36, fontWeight: 800, marginBottom: 24 }}>
-          Soullytics gives only four outputs
-        </h2>
+      {/* ================= OUTPUTS ================= */}
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "0 16px 120px" }}>
+        <h2 style={h2}>Soullytics gives only four outputs</h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: 18,
-          }}
-        >
+        <div style={grid4}>
+          <div style={{ ...outputCard, borderColor: "#22C55E", color: "#22C55E" }}>
+            RUN
+          </div>
+          <div style={{ ...outputCard, borderColor: "#4F7DFF", color: "#4F7DFF" }}>
+            SCALE
+          </div>
+          <div style={{ ...outputCard, borderColor: "#FACC15", color: "#FACC15" }}>
+            PAUSE
+          </div>
+          <div style={{ ...outputCard, borderColor: "#FF5A5A", color: "#FF5A5A" }}>
+            KILL
+          </div>
+        </div>
+      </section>
+
+      {/* ================= ENGINE DEPTH ================= */}
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "0 16px 120px" }}>
+        <h2 style={h2}>This is not a dashboard. It’s a system.</h2>
+
+        <div style={grid3}>
           {[
-            ["RUN", "#22C55E"],
-            ["SCALE", "#22C55E"],
-            ["PAUSE", "#FACC15"],
-            ["KILL", "#EF4444"],
-          ].map(([t, c]) => (
-            <div
-              key={t}
-              style={{
-                background: "#020617",
-                border: `1px solid ${c}`,
-                borderRadius: 14,
-                padding: 22,
-              }}
-            >
-              <h3 style={{ fontSize: 20, color: c }}>{t}</h3>
-              <p style={{ color: "#9CA3AF", fontSize: 13 }}>
-                Clear, defensible decision.
-              </p>
+            "Budget Reality Engine",
+            "Creative Fatigue Detection",
+            "Signal Quality Validator",
+            "Capital Protection Layer",
+            "Human Override Risk Check",
+            "Decision Confidence Validator",
+          ].map((e) => (
+            <div key={e} style={engineCard}>
+              {e}
             </div>
           ))}
         </div>
       </section>
 
-      {/* ================= FINAL CTA ================= */}
-      <section style={{ textAlign: "center", paddingBottom: 120 }}>
-        <h2 style={{ fontSize: 36, fontWeight: 900, marginBottom: 18 }}>
-          Dashboards explain the past.
-          <br />
-          <span style={{ color: "#2563EB" }}>Soullytics decides the future.</span>
-        </h2>
+      {/* ================= EXCLUSION ================= */}
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "0 16px 160px" }}>
+        <h2 style={h2}>Soullytics is not for everyone</h2>
 
-        <button
-          style={{
-            background: "#2563EB",
-            color: "#fff",
-            border: "none",
-            padding: "16px 30px",
-            borderRadius: 14,
-            fontWeight: 800,
-            cursor: "pointer",
-            fontSize: 16,
-          }}
-        >
-          Run the engine
-        </button>
+        <div style={grid2}>
+          <div style={exclusionCard}>
+            <b>Not for you if:</b>
+            <ul>
+              <li>You want motivation</li>
+              <li>You trust gut feelings</li>
+              <li>You hate killing ideas</li>
+            </ul>
+          </div>
+
+          <div style={inclusionCard}>
+            <b>For you if:</b>
+            <ul>
+              <li>You respect math over ego</li>
+              <li>You kill fast to win bigger</li>
+              <li>You treat ads like capital allocation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style={{ textAlign: "center", marginTop: 60 }}>
+          <button style={ctaPrimary}>Run the engine</button>
+        </div>
       </section>
     </main>
   );
 }
+
+/* ================= STYLES ================= */
+
+const ctaPrimary = {
+  background: "#4F7DFF",
+  color: "#fff",
+  border: "none",
+  padding: "12px 20px",
+  borderRadius: 10,
+  fontWeight: 600,
+  cursor: "pointer",
+};
+
+const ctaSecondary = {
+  background: "transparent",
+  color: "#EAF0FF",
+  border: "1px solid #2A3A6A",
+  padding: "12px 20px",
+  borderRadius: 10,
+  fontWeight: 600,
+  cursor: "pointer",
+};
+
+const h2 = {
+  fontSize: 32,
+  fontWeight: 800,
+  marginBottom: 32,
+};
+
+const decisionCard = {
+  background: "linear-gradient(180deg, #0B1228, #050914)",
+  border: "1px solid #1E2A55",
+  borderRadius: 16,
+  padding: 28,
+  maxWidth: 520,
+};
+
+const label = { fontSize: 12, color: "#8FA2E8" };
+const value = { fontSize: 14, fontWeight: 600 };
+
+const reasonList = {
+  marginTop: 16,
+  paddingLeft: 18,
+  color: "#A9B6E6",
+  fontSize: 14,
+};
+
+const footnote = {
+  marginTop: 16,
+  fontSize: 12,
+  color: "#6F7DB8",
+};
+
+const grid3 = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+  gap: 20,
+};
+
+const grid4 = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+  gap: 20,
+};
+
+const grid2 = {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  gap: 24,
+};
+
+const problemCard = {
+  background: "#050914",
+  border: "1px solid #1E2A55",
+  borderRadius: 14,
+  padding: 18,
+  color: "#A9B6E6",
+};
+
+const outputCard = {
+  border: "2px solid",
+  borderRadius: 16,
+  padding: 32,
+  textAlign: "center" as const,
+  fontSize: 20,
+  fontWeight: 800,
+};
+
+const engineCard = {
+  background: "#050914",
+  border: "1px solid #1E2A55",
+  borderRadius: 14,
+  padding: 20,
+  fontWeight: 600,
+};
+
+const exclusionCard = {
+  background: "#12060A",
+  border: "1px solid #402028",
+  borderRadius: 16,
+  padding: 24,
+};
+
+const inclusionCard = {
+  background: "#06120B",
+  border: "1px solid #1E4030",
+  borderRadius: 16,
+  padding: 24,
+};
